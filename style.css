@@ -187,3 +187,23 @@ main {
     opacity: 1; 
     transform: translateY(0); 
 }
+/* No teu style.css */
+#navbar .logo img { 
+    height: 60px; /* Aumentado para visibilidade */
+    width: auto;
+    display: block;
+}
+
+main { 
+    padding-top: 120px; /* Margem extra para segurança */
+    display: block;
+    width: 100%;
+}
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
