@@ -1,17 +1,43 @@
-<main class="container">
-    <header class="page-header reveal">
-        <span>Curadoria 2024</span>
-        <h2>As Coleções</h2>
-    </header>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8"><title>Coleções | LILYAN</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo"><img src="LILYAN.png" alt="LILYAN"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="colecoes.html">Coleções</a></li>
+            <li><a href="universo.html">O Universo</a></li>
+            <li><a href="showroom.html">Showroom Privado</a></li>
+            <li><a href="atelier.html">Atelier</a></li>
+            <li><a href="etica.html">Ética</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+    </nav>
 
-    <div class="product-grid">
-        <div class="product-card reveal">
-            <div class="product-image" style="background-image: url('brincos.jpg');"></div>
-            <div class="product-info">
-                <h3>Série Pétala</h3>
-                <p>Ouro Branco & Diamantes</p>
-                <span class="price">Sob Consulta</span>
+    <main style="padding-top: 150px;">
+        <header class="page-header reveal" style="text-align:center; margin-bottom: 80px;">
+            <span class="subtitle">Curadoria Permanente</span>
+            <h1 style="font-family:'Cormorant Garamond'; font-size: 3.5rem;">As Peças</h1>
+        </header>
+
+        <section class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; padding: 0 10%;">
+            <div class="product-item reveal">
+                <div style="height: 500px; background: #f4f4f4; margin-bottom: 20px;"></div> <h3>Colar Lily Solitaire</h3>
+                <p>Ouro 18k e Diamante 2ct</p>
             </div>
-        </div>
-        </div>
-</main>
+            <div class="product-item reveal" style="margin-top: 60px;">
+                <div style="height: 500px; background: #f4f4f4; margin-bottom: 20px;"></div>
+                <h3>Anel Éther</h3>
+                <p>Platina e Safira Branca</p>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
