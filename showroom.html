@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head><meta charset="UTF-8"><title>Showroom | LILYAN</title><link rel="stylesheet" href="style.css"></head>
-<body style="background: #000; color: #fff;">
-    <nav id="navbar" style="background: #000; border-bottom-color: #333;"><div class="logo"><img src="LILYAN.png" style="filter: invert(1);"></div>
-        <ul class="nav-links"><li><a href="index.html" style="color: #fff;">Início</a></li><li><a href="colecoes.html" style="color: #fff;">Coleções</a></li><li><a href="universo.html" style="color: #fff;">O Universo</a></li><li><a href="showroom.html" style="color: #fff;">Showroom</a></li><li><a href="contactos.html" style="color: #fff;">Contactos</a></li></ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privé Showroom | LILYAN</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+</head>
+<body style="background: #000; color: #fff; overflow: hidden;">
+
+    <nav id="navbar" style="background: rgba(0,0,0,0.9); border-bottom: 1px solid #222;">
+        <div class="logo">
+            <img src="LILYAN.png" alt="LILYAN" style="filter: brightness(0) invert(1);">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" style="color: #fff;">Início</a></li>
+            <li><a href="colecoes.html" style="color: #fff;">Coleções</a></li>
+            <li><a href="universo.html" style="color: #fff;">O Universo</a></li>
+            <li><a href="showroom.html" style="color: #fff;">Showroom</a></li>
+            <li><a href="contactos.html" style="color: #fff;">Contactos</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="index.html" style="color: var(--accent); text-decoration: none; font-size: 10px; letter-spacing: 2px;">SAIR</a>
+        </div>
     </nav>
+
     <main>
-        <section class="hero reveal">
-            <span style="color: var(--accent);">PRIVÉ</span>
-            <h1>Acesso Exclusivo</h1>
-            <input type="password" placeholder="CÓDIGO DE CONVITE" style="border-bottom-color: #fff; color: #fff; text-align: center; width: 300px; margin-top: 30px;">
+        <section class="hero reveal" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%;">
+            <span style="color: var(--accent); letter-spacing: 8px; font-size: 12px; margin-bottom: 10px;">EXCLUSIVO</span>
+            <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; margin: 20px 0;">Acesso Restrito</h1>
+            <p style="font-weight: 200; color: #888; max-width: 500px; margin-bottom: 50px; line-height: 1.8;">
+                Bem-vindo ao nosso espaço de curadoria privada. Introduza o seu código de convite pessoal para aceder às peças numeradas e coleções de alta joalharia.
+            </p>
+            
+            <div style="position: relative;">
+                <input type="password" placeholder="CÓDIGO DE CONVITE" 
+                    style="background: transparent; border: none; border-bottom: 1px solid #444; color: #fff; text-align: center; width: 300px; padding: 15px; font-size: 11px; letter-spacing: 6px; outline: none; transition: border-color 0.4s;">
+                <button class="btn-luxury" style="display: block; margin: 40px auto; border-color: #444; color: #fff; background: transparent; cursor: pointer;">
+                    Entrar no Cofre
+                </button>
+            </div>
         </section>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
