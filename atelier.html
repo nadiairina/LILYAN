@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8"><title>Atelier | LILYAN</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier | LILYAN</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main style="padding: 150px 5%;">
-        <section style="display: flex; align-items: center; gap: 100px;">
-            <div class="reveal" style="flex: 1;">
-                <h2 style="font-family:'Cormorant Garamond'; font-size: 3rem;">Mãos que Tecem Ouro</h2>
-                <p style="margin-top: 20px; font-weight: 200;">No nosso atelier, o tempo para. Cada cravação de diamante é feita sob microscópio, garantindo que a alma do artesão esteja presente em cada milímetro da peça.</p>
+    <nav id="navbar">
+        <div class="logo"><img src="LILYAN.png" alt="LILYAN"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="colecoes.html">Coleções</a></li>
+            <li><a href="universo.html">O Universo</a></li>
+            <li><a href="showroom.html">Showroom</a></li>
+            <li><a href="atelier.html">Atelier</a></li>
+            <li><a href="etica.html">Ética</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+        <button id="mode-toggle">✧</button>
+    </nav>
+
+    <main style="padding: 150px 8%;">
+        <section style="display: flex; align-items: center; gap: clamp(30px, 8vw, 100px); flex-wrap: wrap;">
+            <div class="reveal" style="flex: 1; min-width: 320px;">
+                <span style="letter-spacing: 5px; color: var(--accent); font-size: 11px; text-transform: uppercase;">Mestria Artesanal</span>
+                <h2 style="font-family:'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; margin-top: 20px; line-height: 1.1;">Mãos que Tecem Ouro</h2>
+                <hr style="width: 60px; border: 0.5px solid var(--accent); margin: 40px 0;">
+                <p style="margin-top: 20px; font-weight: 200; font-size: 1.1rem; line-height: 1.8; color: var(--text);">
+                    No nosso atelier, o tempo para. Cada cravação de diamante é feita sob microscópio, garantindo que a alma do artesão esteja presente em cada milímetro da peça. 
+                    Trabalhamos o metal como seda, esculpindo formas que desafiam a rigidez do ouro.
+                </p>
             </div>
-            <div class="reveal" style="flex: 1; height: 700px; background: #eee;"></div>
+
+            <div class="reveal" style="flex: 1; min-width: 320px; height: 75vh; background: url('atelier-work.jpg') center/cover; position: relative;">
+                <div style="position: absolute; top: -20px; left: -20px; width: 100%; height: 100%; border: 1px solid var(--gold-soft); z-index: -1;"></div>
+            </div>
         </section>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
