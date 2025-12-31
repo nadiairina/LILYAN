@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8"><title>Ética | LILYAN</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ética e Sustentabilidade | LILYAN</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main style="padding: 150px 20%; text-align: center;">
-        <div class="reveal">
-            <h2 style="font-family:'Cormorant Garamond'; font-size: 2.5rem;">Compromisso Ético</h2>
+    <nav id="navbar">
+        <div class="logo"><img src="LILYAN.png" alt="LILYAN Logo"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="colecoes.html">Coleções</a></li>
+            <li><a href="universo.html">O Universo</a></li>
+            <li><a href="showroom.html">Showroom</a></li>
+            <li><a href="atelier.html">Atelier</a></li>
+            <li><a href="etica.html">Ética</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="mode-toggle">✧</button>
+        </div>
+    </nav>
+
+    <main style="padding: 180px 10% 100px;">
+        <div class="reveal" style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <span style="letter-spacing: 5px; color: var(--accent); font-size: 11px; text-transform: uppercase;">O Nosso Legado</span>
+            <h2 style="font-family:'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; margin: 20px 0;">Compromisso Ético</h2>
             <hr style="width: 50px; margin: 40px auto; border: 0.5px solid var(--accent);">
-            <p style="margin-bottom: 30px;">100% Ouro Reciclado.</p>
-            <p style="margin-bottom: 30px;">Diamantes Certificados GIA & Kimberley Process.</p>
-            <p>Trabalho justo e rastreabilidade total.</p>
+            
+            <div style="margin-top: 60px; display: grid; gap: 40px;">
+                <div style="border: 1px solid var(--gold-soft); padding: 40px; transition: 0.4s;" class="hover-box">
+                    <h3 style="font-family: 'Cormorant Garamond'; font-size: 1.8rem; margin-bottom: 15px;">Circularidade</h3>
+                    <p style="font-weight: 200; line-height: 1.8;">Utilizamos exclusivamente <strong>100% Ouro Reciclado</strong>, reduzindo o impacto ambiental da mineração em 99%, sem nunca comprometer a pureza do metal.</p>
+                </div>
+
+                <div style="border: 1px solid var(--gold-soft); padding: 40px; transition: 0.4s;" class="hover-box">
+                    <h3 style="font-family: 'Cormorant Garamond'; font-size: 1.8rem; margin-bottom: 15px;">Transparência Cristalinha</h3>
+                    <p style="font-weight: 200; line-height: 1.8;">Todos os nossos diamantes são acompanhados por certificados <strong>GIA</strong> e cumprem rigorosamente o <strong>Kimberley Process</strong>, garantindo uma origem livre de conflitos.</p>
+                </div>
+
+                <div style="border: 1px solid var(--gold-soft); padding: 40px; transition: 0.4s;" class="hover-box">
+                    <h3 style="font-family: 'Cormorant Garamond'; font-size: 1.8rem; margin-bottom: 15px;">Humanidade</h3>
+                    <p style="font-weight: 200; line-height: 1.8;">Trabalho justo, dignidade artesanal e rastreabilidade total desde a mesa de desenho até à entrega da caixa de veludo.</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 80px; font-style: italic; font-family: 'Cormorant Garamond'; font-size: 1.4rem; color: var(--accent);">"O luxo não pode existir à custa do futuro."</p>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
