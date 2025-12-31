@@ -2,25 +2,62 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactos | LILYAN</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav id="navbar">...</nav>
-    <main>
-        <section class="content-section reveal">
-            <h2>Agendar Consultoria Privada</h2>
-            <form class="luxury-form">
-                <input type="text" placeholder="NOME COMPLETO">
-                <input type="email" placeholder="ENDEREÇO DE EMAIL">
-                <textarea rows="4" placeholder="SUA MENSAGEM"></textarea>
-                <button class="btn-luxury">Enviar Pedido</button>
-            </form>
-            <div style="height: 400px; background: #eee; margin-top: 50px; filter: grayscale(1);">
-                <p style="padding-top: 180px;">AV. DA LIBERDADE, LISBOA</p>
+    <nav id="navbar">
+        <div class="logo"><img src="LILYAN.png" alt="LILYAN"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="colecoes.html">Coleções</a></li>
+            <li><a href="universo.html">O Universo</a></li>
+            <li><a href="showroom.html">Showroom</a></li>
+            <li><a href="atelier.html">Atelier</a></li>
+            <li><a href="etica.html">Ética</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="mode-toggle">✧</button>
+        </div>
+    </nav>
+
+    <main class="reveal">
+        <section class="content-section" style="padding-top: 150px; padding-bottom: 100px;">
+            <span style="letter-spacing: 5px; color: var(--accent); font-size: 11px;">RESERVE O SEU MOMENTO</span>
+            <h2 style="font-family: 'Cormorant Garamond'; font-size: 3rem; font-weight: 300; margin-top: 10px;">Consultoria Privada</h2>
+            
+            <div style="display: flex; gap: 80px; flex-wrap: wrap; justify-content: center; margin-top: 60px; padding: 0 5%;">
+                <form class="luxury-form" style="flex: 1; min-width: 320px;">
+                    <input type="text" placeholder="NOME COMPLETO" required>
+                    <input type="email" placeholder="ENDEREÇO DE EMAIL" required>
+                    <input type="tel" placeholder="TELEFONE">
+                    <textarea rows="4" placeholder="INTERESSE (EX: ALTA JOALHARIA, ANEL DE NOIVADO)"></textarea>
+                    <button type="submit" class="btn-luxury" style="background: none; cursor: pointer; width: 100%;">Solicitar Agendamento</button>
+                </form>
+                
+                <div style="flex: 1; min-width: 320px;">
+                    <div class="map-container" style="height: 400px; filter: grayscale(1) contrast(1.1); border: 1px solid var(--gold-soft); margin-bottom: 30px;">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.123456789!2d-9.145!3d38.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19331a6ea0807f%3A0x6a2c!2sAv.%20da%20Liberdade%2C%20Lisboa!5e0!3m2!1spt!2spt!4v123456789" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                    
+                    <div style="text-align: left; letter-spacing: 1px;">
+                        <p style="font-size: 12px; margin-bottom: 10px;"><strong>ATELIER LISBOA</strong></p>
+                        <p style="font-weight: 200; font-size: 13px;">Avenida da Liberdade, 1100-001 Lisboa</p>
+                        <p style="font-weight: 200; font-size: 13px; margin-top: 20px;">
+                            <a href="https://wa.me/351900000000" style="color: var(--accent); text-decoration: none;">CONTACTAR VIA WHATSAPP →</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
