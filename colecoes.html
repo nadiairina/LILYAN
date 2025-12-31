@@ -2,29 +2,61 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coleções | LILYAN</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav id="navbar">
-        </nav>
-    <main>
+        <div class="logo"><img src="LILYAN.png" alt="LILYAN"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="colecoes.html">Coleções</a></li>
+            <li><a href="universo.html">O Universo</a></li>
+            <li><a href="showroom.html">Showroom</a></li>
+            <li><a href="atelier.html">Atelier</a></li>
+            <li><a href="etica.html">Ética</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="mode-toggle">✧</button>
+        </div>
+    </nav>
+
+    <main style="padding-top: 150px;">
         <section class="content-section reveal">
-            <h2>Curadoria Permanente</h2>
-            <div class="grid">
+            <span style="letter-spacing: 5px; color: var(--accent); font-size: 11px; text-transform: uppercase;">Atemporal</span>
+            <h2 style="font-family:'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; margin-top: 10px;">Curadoria Permanente</h2>
+            
+            <div class="grid" style="margin-top: 80px;">
                 <div class="card">
-                    <img src="joia1.jpg" alt="Colar">
-                    <h3>Série Pétala</h3>
-                    <p>Ouro 18k e Diamante</p>
+                    <div class="img-container" style="overflow: hidden; background: #f9f9f9; margin-bottom: 20px;">
+                        <img src="joia1.jpg" alt="Colar Série Pétala" style="width: 100%; transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);">
+                    </div>
+                    <h3 style="font-family: 'Cormorant Garamond'; font-size: 1.5rem; font-weight: 400;">Série Pétala</h3>
+                    <p style="font-weight: 200; letter-spacing: 1px; font-size: 12px; color: var(--accent); margin-top: 5px;">Ouro 18k e Diamante</p>
                 </div>
+
                 <div class="card">
-                    <img src="joia2.jpg" alt="Anel">
-                    <h3>Anel Éther</h3>
-                    <p>Platina Pura</p>
+                    <div class="img-container" style="overflow: hidden; background: #f9f9f9; margin-bottom: 20px;">
+                        <img src="joia2.jpg" alt="Anel Éther" style="width: 100%; transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);">
+                    </div>
+                    <h3 style="font-family: 'Cormorant Garamond'; font-size: 1.5rem; font-weight: 400;">Anel Éther</h3>
+                    <p style="font-weight: 200; letter-spacing: 1px; font-size: 12px; color: var(--accent); margin-top: 5px;">Platina Pura</p>
+                </div>
+
+                <div class="card">
+                    <div class="img-container" style="overflow: hidden; background: #f9f9f9; margin-bottom: 20px;">
+                        <img src="joia3.jpg" alt="Brincos Orvalho" style="width: 100%; transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);">
+                    </div>
+                    <h3 style="font-family: 'Cormorant Garamond'; font-size: 1.5rem; font-weight: 400;">Brincos Orvalho</h3>
+                    <p style="font-weight: 200; letter-spacing: 1px; font-size: 12px; color: var(--accent); margin-top: 5px;">Pérolas Negras e Ouro Branco</p>
                 </div>
             </div>
         </section>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
