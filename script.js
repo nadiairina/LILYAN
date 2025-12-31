@@ -1,29 +1,23 @@
-// Configuração de Animação de Entrada
-ScrollReveal().reveal('.reveal', {
-    distance: '80px',
-    duration: 2500,
-    easing: 'cubic-bezier(0.19, 1, 0.22, 1)',
-    interval: 150
-});
+// Ativar animações ao fazer scroll
+const observerOptions = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, observerOptions);
 
-// Toggle Dark/Light Mode
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Dark Mode
 const modeBtn = document.getElementById('mode-toggle');
 modeBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     modeBtn.textContent = document.body.classList.contains('dark-mode') ? '☀' : '✧';
 });
 
-// Navbar Transparente ao Scroll
-window.onscroll = () => {
-    const nav = document.getElementById('navbar');
-    if (window.scrollY > 100) {
-        nav.style.background = "var(--bg)";
-        nav.style.padding = "20px 5%";
-    } else {
-        nav.style.background = "transparent";
-        nav.style.padding = "30px 5%";
-    }
+// Forçar ativação da hero no carregamento
+window.onload = () => {
+    document.querySelector('.hero')?.classList.add('active');
 };
-
-// Log de SEO básico
-console.log("LILYAN SEO: Website carregado com foco em High-End Jewelry.");
