@@ -1,9 +1,8 @@
 :root {
     --bg: #fdfcf8;
     --text: #1a1a1a;
-    --accent: #b08d57; /* Bronze LILYAN */
+    --accent: #b08d57;
     --nav-height: 100px;
-    --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dark-mode {
@@ -11,27 +10,17 @@
     --text: #fdfcf8;
 }
 
-/* Reset e Base */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
-
-html {
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--bg);
     color: var(--text);
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-    transition: var(--transition);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
 }
 
-/* Header / Navbar */
+/* NAVBAR E LOGO */
 #navbar {
     height: var(--nav-height);
     display: flex;
@@ -39,445 +28,40 @@ body {
     align-items: center;
     padding: 0 5%;
     position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+    top: 0; width: 100%; z-index: 1000;
     background: var(--bg);
     border-bottom: 1px solid rgba(176, 141, 87, 0.1);
 }
 
-#navbar .logo {
-    flex: 1; 
-    display: flex;
-    align-items: center;
-}
-
-.logo img { 
-    height: 60px; 
-    width: auto;
-    object-fit: contain; 
-}
-
-.nav-links { 
-    display: flex; 
-    list-style: none;
-    flex: 2;
-    justify-content: center;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: var(--text);
-    margin: 0 15px;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 300;
-    white-space: nowrap;
-}
-
-.nav-actions {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 20px;
-}
-
-.nav-actions a {
-    text-decoration: none;
-    color: var(--text);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-#mode-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text);
-    font-size: 1.2rem;
-}
-
-/* Estrutura Principal */
-main { 
-    padding-top: var(--nav-height); 
-    width: 100%;
-}
-
-/* Hero Slider Corrigido */
-.hero-slider {
-    width: 100%;
-    height: calc(100vh - var(--nav-height));
-    position: relative;
-    overflow: hidden;
-}
-
-.slide {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.hero-content {
-    text-align: center;
-    padding: 0 10%;
-    max-width: 900px;
-}
-
-.hero-content span {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 12px;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.hero-content h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    font-weight: 300;
-    margin-bottom: 20px;
-    line-height: 1.1;
-}
-
-.hero-content p {
-    font-weight: 200;
-    margin-bottom: 40px;
-    font-size: 1.1rem;
-}
-
-/* Botão Luxury */
-.btn-luxury {
-    display: inline-block;
-    padding: 18px 45px;
-    border: 1px solid var(--accent);
-    color: var(--text);
-    text-decoration: none;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-size: 10px;
-    transition: 0.4s;
-}
-
-.btn-luxury:hover { 
-    background: var(--accent); 
-    color: #fff; 
-}
-
-/* Citação / Featured Quote */
-.featured-quote {
-    padding: 120px 10%;
-    text-align: center;
-}
-
-.featured-quote p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-style: italic;
-    max-width: 800px;
-    margin: 0 auto;
-    font-weight: 300;
-}
-
-/* Grid e Cards */
-.content-section { 
-    padding: 80px 10%; 
-    text-align: center; 
-}
-
-.grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 50px; 
-    margin-top: 50px; 
-}
-
-.card img { 
-    width: 100%; 
-    height: 450px; 
-    object-fit: cover; 
-    background: #f0f0f0; 
-    margin-bottom: 20px; 
-    transition: transform 1.2s ease;
-}
-
-.card:hover img {
-    transform: scale(1.02);
-}
-
-/* Animações de Revelação */
-.reveal { 
-    opacity: 0; 
-    transform: translateY(30px); 
-    transition: 1.2s all cubic-bezier(0.16, 1, 0.3, 1); 
-}
-
-.reveal.active { 
-    opacity: 1; 
-    transform: translateY(0); 
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .nav-links { display: none; } /* Idealmente aqui farias um menu hamburger */
-    #navbar { padding: 0 20px; }
-    .hero-content h1 { font-size: 3rem; }
-}
-/* Cores base do Dark Mode */
-.dark-mode {
-    --bg: #0a0a0a;
-    --text: #fdfcf8;
-}
-
-/* Garante que o Navbar acompanhe a cor de fundo */
-.dark-mode #navbar {
-    background: var(--bg);
-    border-bottom: 1px solid rgba(176, 141, 87, 0.2);
-}
-
-/* Inverte a cor do Logotipo para branco no Dark Mode */
-.dark-mode .logo img {
-    filter: brightness(0) invert(1);
-}
-
-/* Garante que os links do menu mudem para a cor clara */
-.dark-mode .nav-links li a,
-.dark-mode .nav-actions a,
-.dark-mode #mode-toggle {
-    color: var(--text);
-}
-
-/* Ajuste específico para o Showroom se usar a classe dark-mode */
-.dark-mode .hero-content h1, 
-.dark-mode .hero-content p {
-    color: var(--text);
-}
-/* Garante que o Navbar acompanhe a cor de fundo no modo escuro */
-.dark-mode #navbar {
-    background: var(--bg) !important;
-}
-
-/* Inverte a cor do logótipo para branco */
-.dark-mode .logo img, 
-body[style*="background: #000"] .logo img {
-    filter: brightness(0) invert(1);
-}
-
-/* Força o menu a ficar branco no modo escuro */
-.dark-mode .nav-links li a,
-.dark-mode .nav-actions a,
-.dark-mode #mode-toggle,
-body[style*="background: #000"] .nav-links li a,
-body[style*="background: #000"] .nav-actions a {
-    color: #fdfcf8 !important;
-}
-/* Inverte a cor do logótipo para branco no modo escuro */
-.dark-mode .logo img,
-body[style*="background: #000"] .logo img,
-body[style*="background: rgb(0, 0, 0)"] .logo img {
-    filter: brightness(0) invert(1) !important;
-    mix-blend-mode: screen !important; /* Remove qualquer fundo branco residual da imagem */
-}
-/* Correção Universal do Logótipo no Dark Mode */
-.dark-mode .logo img {
-    filter: brightness(0) invert(1) !important;
-    mix-blend-mode: screen !important;
-}
-
-/* Transição suave ao mudar de modo */
-body {
-    transition: background-color 0.4s ease, color 0.4s ease;
-}
-/* FORÇAR VISIBILIDADE DO LOGOTIPO */
-#navbar .logo img {
-    display: block !important;
+.logo img {
     height: 60px !important;
-    width: auto !important;
+    display: block !important;
     transition: filter 0.4s ease !important;
 }
 
-/* Quando o Dark Mode está ativo */
-.dark-mode #navbar .logo img,
-body.dark-mode .logo img {
-    filter: brightness(0) invert(1) !important;
-    mix-blend-mode: screen !important; /* Faz o fundo preto da imagem ficar transparente */
-}
-
-/* No Showroom (que é sempre escuro) */
-body[style*="background: #000"] #navbar .logo img,
-body[style*="background: rgb(0, 0, 0)"] #navbar .logo img {
-    filter: brightness(0) invert(1) !important;
-    mix-blend-mode: screen !important;
-}
-/* FORÇAR VISIBILIDADE DO LOGO EM QUALQUER PÁGINA */
-.logo, .logo img {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-#navbar .logo img {
-    height: 60px !important;
-    width: auto !important;
-    filter: none !important; /* Cor real no modo claro */
-}
-
-/* Quando o Dark Mode está ativo (via JS) */
-body.dark-mode #navbar .logo img {
+/* REGRA DE OURO PARA O LOGO NO MODO ESCURO */
+.dark-mode .logo img {
     filter: brightness(0) invert(1) !important;
     mix-blend-mode: screen !important;
 }
 
-/* Caso a página seja o Showroom (sempre preta) */
-body[style*="background: #000"] #navbar .logo img {
-    filter: brightness(0) invert(1) !important;
-}
-/* --- ATELIER STYLES --- */
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: var(--text); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
 
-.atelier-main {
-    padding: 160px 5% 100px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
+/* SECCÃO ATELIER */
+.atelier-container { padding: 180px 8% 100px; max-width: 1400px; margin: 0 auto; }
+.atelier-content { display: flex; align-items: center; gap: 80px; flex-wrap: wrap; }
+.atelier-text { flex: 1; min-width: 320px; }
+.label { letter-spacing: 5px; color: var(--accent); font-size: 11px; text-transform: uppercase; }
+.atelier-text h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; margin: 25px 0; }
+.divider { width: 60px; height: 1px; background: var(--accent); margin: 30px 0; }
+.atelier-badges { display: flex; gap: 30px; font-size: 10px; opacity: 0.6; }
 
-.atelier-hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 80px;
-    min-height: 80vh;
-}
+.atelier-visual { flex: 1; min-width: 320px; }
+.image-wrapper { position: relative; width: 90%; margin-left: auto; }
+.image-wrapper img { width: 100%; height: 75vh; object-fit: cover; position: relative; z-index: 2; }
+.decorative-frame { position: absolute; top: -20px; left: -20px; width: 100%; height: 100%; border: 1px solid var(--accent); z-index: 1; }
 
-.atelier-text {
-    flex: 1;
-    max-width: 500px;
-}
-
-.label {
-    letter-spacing: 6px;
-    color: var(--accent);
-    font-size: 10px;
-    text-transform: uppercase;
-    display: block;
-}
-
-.atelier-text h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 300;
-    line-height: 1.1;
-    margin: 25px 0;
-}
-
-.divider {
-    width: 50px;
-    height: 1px;
-    background: var(--accent);
-    margin: 40px 0;
-}
-
-.atelier-text p {
-    font-weight: 200;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: var(--text);
-    margin-bottom: 40px;
-}
-
-.atelier-meta {
-    display: flex;
-    gap: 30px;
-    font-size: 9px;
-    letter-spacing: 3px;
-    opacity: 0.5;
-}
-
-/* Visual e Molduras */
-.atelier-visual {
-    flex: 1.2;
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.main-img-wrapper {
-    position: relative;
-    width: 80%;
-    z-index: 2;
-}
-
-.main-img {
-    width: 100%;
-    height: 70vh;
-    object-fit: cover;
-    display: block;
-}
-
-.floating-frame {
-    position: absolute;
-    top: 30px;
-    left: -30px;
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--accent);
-    z-index: -1;
-}
-
-.detail-img-wrapper {
-    position: absolute;
-    bottom: -40px;
-    right: 0;
-    width: 250px;
-    height: 300px;
-    z-index: 3;
-    border: 10px solid var(--bg); /* Cria um respiro entre imagens */
-}
-
-.detail-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Secção de Processo */
-.process-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 60px;
-    margin-top: 150px;
-    padding-top: 80px;
-    border-top: 1px solid rgba(176,141,87,0.1);
-}
-
-.process-item h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    font-weight: 400;
-}
-
-.process-item p {
-    font-size: 13px;
-    font-weight: 200;
-    opacity: 0.7;
-}
-
-/* Responsividade */
-@media (max-width: 992px) {
-    .atelier-hero {
-        flex-direction: column;
-        text-align: center;
-    }
-    .atelier-text { max-width: 100%; }
-    .divider { margin: 30px auto; }
-    .atelier-meta { justify-content: center; }
-    .main-img-wrapper { width: 100%; }
-    .detail-img-wrapper { display: none; } /* Esconde o detalhe no mobile para limpar o visual */
-}
+/* REVEAL ANIMATION */
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
