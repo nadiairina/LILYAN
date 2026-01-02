@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactos | LILYAN</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav id="navbar">
@@ -24,34 +24,57 @@
             <a href="https://wa.me/seunumeroaqui" class="wa-link" target="_blank">WhatsApp</a>
         </div>
     </nav>
-    <main class="reveal">
-        <section class="content-section" style="padding-top: 150px; padding-bottom: 100px;">
-            <span style="letter-spacing: 5px; color: var(--accent); font-size: 11px;">RESERVE O SEU MOMENTO</span>
-            <h2 style="font-family: 'Cormorant Garamond'; font-size: 3rem; font-weight: 300; margin-top: 10px;">Consultoria Privada</h2>
-            
-            <div style="display: flex; gap: 80px; flex-wrap: wrap; justify-content: center; margin-top: 60px; padding: 0 5%;">
-                <form class="luxury-form" style="flex: 1; min-width: 320px;">
-                    <input type="text" placeholder="NOME COMPLETO" required>
-                    <input type="email" placeholder="ENDEREÇO DE EMAIL" required>
-                    <input type="tel" placeholder="TELEFONE">
-                    <textarea rows="4" placeholder="INTERESSE (EX: ALTA JOALHARIA, ANEL DE NOIVADO)"></textarea>
-                    <button type="submit" class="btn-luxury" style="background: none; cursor: pointer; width: 100%;">Solicitar Agendamento</button>
-                </form>
-                
-                <div style="flex: 1; min-width: 320px;">
-                    <div class="map-container" style="height: 400px; filter: grayscale(1) contrast(1.1); border: 1px solid var(--gold-soft); margin-bottom: 30px;">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.123456789!2d-9.145!3d38.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19331a6ea0807f%3A0x6a2c!2sAv.%20da%20Liberdade%2C%20Lisboa!5e0!3m2!1spt!2spt!4v123456789" 
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                        </iframe>
+
+    <main class="contact-container">
+        <header class="contact-header reveal">
+            <span class="label">Reserve o seu momento</span>
+            <h1>Consultoria Privada</h1>
+            <p class="subtitle">Agende uma reunião exclusiva no nosso atelier ou solicite informações personalizadas.</p>
+        </header>
+
+        <section class="contact-grid">
+            <div class="contact-form-wrapper reveal">
+                <form class="luxury-form">
+                    <div class="input-group">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">Nome Completo</label>
                     </div>
-                    
-                    <div style="text-align: left; letter-spacing: 1px;">
-                        <p style="font-size: 12px; margin-bottom: 10px;"><strong>ATELIER LISBOA</strong></p>
-                        <p style="font-weight: 200; font-size: 13px;">Avenida da Liberdade, 1100-001 Lisboa</p>
-                        <p style="font-weight: 200; font-size: 13px; margin-top: 20px;">
-                            <a href="https://wa.me/351900000000" style="color: var(--accent); text-decoration: none;">CONTACTAR VIA WHATSAPP →</a>
-                        </p>
+                    <div class="input-group">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Endereço de Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="phone" placeholder=" ">
+                        <label for="phone">Telefone</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" rows="4" placeholder=" "></textarea>
+                        <label for="message">Interesse (Ex: Noivado, Alta Joalharia)</label>
+                    </div>
+                    <button type="submit" class="btn-submit">Solicitar Agendamento</button>
+                </form>
+            </div>
+
+            <div class="contact-info reveal">
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.112102875138!2d-9.1465!3d38.7223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd193375b4306385%3A0x6b907578f729f274!2sAv.%20da%20Liberdade%2C%20Lisboa!5e0!3m2!1spt!2spt!4v1611111111111!5m2!1spt!2spt" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+                
+                <div class="info-details">
+                    <div class="info-block">
+                        <h3>Atelier Lisboa</h3>
+                        <p>Avenida da Liberdade, 1100-001 Lisboa</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>Horário</h3>
+                        <p>Segunda a Sexta — 10:00 às 19:00</p>
+                        <p>Por marcação exclusiva</p>
+                    </div>
+                    <div class="info-block">
+                        <a href="https://wa.me/351900000000" class="wa-direct">CONTACTAR VIA WHATSAPP →</a>
                     </div>
                 </div>
             </div>
