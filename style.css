@@ -230,3 +230,92 @@ main {
     #navbar { padding: 0 20px; }
     .hero-content h1 { font-size: 3rem; }
 }
+/* Estilo da Coleção */
+.collection-header {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.subtitle {
+    letter-spacing: 6px;
+    color: var(--accent);
+    font-size: 10px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.collection-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 300;
+}
+
+.collection-desc {
+    max-width: 500px;
+    margin: 20px auto;
+    font-weight: 200;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Luxury Grid Editorial */
+.luxury-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas principais */
+    gap: 80px 40px;
+    align-items: start;
+}
+
+.card {
+    position: relative;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.card.tall {
+    grid-row: span 2; /* Faz o card ocupar duas linhas de altura */
+}
+
+.img-container {
+    overflow: hidden;
+    background: #fdfcf8;
+    margin-bottom: 25px;
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.card-info p {
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+
+/* Responsividade para o Grid */
+@media (max-width: 768px) {
+    .luxury-grid {
+        grid-template-columns: 1fr; /* Uma coluna no telemóvel */
+        gap: 60px;
+    }
+    .card.tall {
+        grid-row: span 1;
+    }
+}
