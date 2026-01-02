@@ -14,6 +14,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 const modeBtn = document.getElementById('mode-toggle');
 modeBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
+    // Muda o ícone conforme o modo
     modeBtn.textContent = document.body.classList.contains('dark-mode') ? '☀' : '✧';
 });
 
