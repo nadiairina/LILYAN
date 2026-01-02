@@ -1,7 +1,7 @@
 :root {
     --bg: #fdfcf8;
     --text: #1a1a1a;
-    --accent: #b08d57; /* Bronze extraído do logótipo LILYAN */
+    --accent: #b08d57; /* Bronze LILYAN */
     --nav-height: 100px;
     --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -11,12 +11,17 @@
     --text: #fdfcf8;
 }
 
-/* FIX: Evita o salto lateral entre páginas com e sem scroll */
-html {
-    overflow-y: scroll;
+/* Reset e Base */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+html {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
 
 body {
     background-color: var(--bg);
@@ -26,7 +31,7 @@ body {
     transition: var(--transition);
 }
 
-/* Header Fixa e Estável */
+/* Header / Navbar */
 #navbar {
     height: var(--nav-height);
     display: flex;
@@ -41,7 +46,6 @@ body {
     border-bottom: 1px solid rgba(176, 141, 87, 0.1);
 }
 
-/* FIX: Garante que o container do logo ocupa sempre o mesmo espaço */
 #navbar .logo {
     flex: 1; 
     display: flex;
@@ -50,10 +54,10 @@ body {
 
 .logo img { 
     height: 60px; 
+    width: auto;
     object-fit: contain; 
 }
 
-/* FIX: Centraliza a navegação e impede movimentos */
 .nav-links { 
     display: flex; 
     list-style: none;
@@ -69,51 +73,89 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 300;
-    white-space: nowrap; /* Impede quebras de linha que movem o menu */
+    white-space: nowrap;
 }
 
-/* FIX: Espaço para o botão de modo/ações para equilibrar o flex */
 .nav-actions {
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-actions a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 #mode-toggle {
     background: none;
     border: none;
     cursor: pointer;
-    color: inherit;
+    color: var(--text);
     font-size: 1.2rem;
 }
 
-/* Estrutura de Conteúdo */
+/* Estrutura Principal */
 main { 
     padding-top: var(--nav-height); 
-    min-height: 80vh; 
+    width: 100%;
 }
 
-/* Hero Section */
-.hero {
+/* Hero Slider Corrigido */
+.hero-slider {
+    width: 100%;
     height: calc(100vh - var(--nav-height));
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
     text-align: center;
     padding: 0 10%;
+    max-width: 900px;
 }
 
-.hero h1 {
+.hero-content span {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hero-content h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2.5rem, 8vw, 5rem);
-    margin: 20px 0;
     font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1.1;
 }
 
-.hero p { max-width: 600px; margin-bottom: 40px; font-weight: 200; }
+.hero-content p {
+    font-weight: 200;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
 
+/* Botão Luxury */
 .btn-luxury {
+    display: inline-block;
     padding: 18px 45px;
     border: 1px solid var(--accent);
     color: var(--text);
@@ -129,19 +171,32 @@ main {
     color: #fff; 
 }
 
+/* Citação / Featured Quote */
+.featured-quote {
+    padding: 120px 10%;
+    text-align: center;
+}
+
+.featured-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
 /* Grid e Cards */
-.content-section { padding: 80px 10%; text-align: center; }
+.content-section { 
+    padding: 80px 10%; 
+    text-align: center; 
+}
 
 .grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 50px; 
     margin-top: 50px; 
-}
-
-.card { 
-    padding: 20px; 
-    transition: 0.5s; 
 }
 
 .card img { 
@@ -157,26 +212,7 @@ main {
     transform: scale(1.02);
 }
 
-/* Formulário Premium */
-.luxury-form { 
-    max-width: 600px; 
-    margin: 50px auto; 
-    text-align: left; 
-}
-
-.luxury-form input, .luxury-form textarea {
-    width: 100%; 
-    padding: 15px 0; 
-    background: transparent; 
-    border: none;
-    border-bottom: 1px solid var(--accent); 
-    color: var(--text); 
-    margin-bottom: 30px; 
-    outline: none;
-    font-family: inherit;
-}
-
-/* Animações de Revelação (JS) */
+/* Animações de Revelação */
 .reveal { 
     opacity: 0; 
     transform: translateY(30px); 
@@ -187,23 +223,10 @@ main {
     opacity: 1; 
     transform: translateY(0); 
 }
-/* No teu style.css */
-#navbar .logo img { 
-    height: 60px; /* Aumentado para visibilidade */
-    width: auto;
-    display: block;
-}
 
-main { 
-    padding-top: 120px; /* Margem extra para segurança */
-    display: block;
-    width: 100%;
-}
-
-.hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+/* Responsivo */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Idealmente aqui farias um menu hamburger */
+    #navbar { padding: 0 20px; }
+    .hero-content h1 { font-size: 3rem; }
 }
