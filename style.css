@@ -278,3 +278,10 @@ body[style*="background: #000"] .nav-links li a,
 body[style*="background: #000"] .nav-actions a {
     color: #fdfcf8 !important;
 }
+/* Inverte a cor do logótipo para branco no modo escuro */
+.dark-mode .logo img,
+body[style*="background: #000"] .logo img,
+body[style*="background: rgb(0, 0, 0)"] .logo img {
+    filter: brightness(0) invert(1) !important;
+    mix-blend-mode: screen !important; /* Remove qualquer fundo branco residual da imagem */
+}
