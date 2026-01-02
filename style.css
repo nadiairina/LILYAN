@@ -316,3 +316,26 @@ body[style*="background: rgb(0, 0, 0)"] #navbar .logo img {
     filter: brightness(0) invert(1) !important;
     mix-blend-mode: screen !important;
 }
+/* FORÇAR VISIBILIDADE DO LOGO EM QUALQUER PÁGINA */
+.logo, .logo img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#navbar .logo img {
+    height: 60px !important;
+    width: auto !important;
+    filter: none !important; /* Cor real no modo claro */
+}
+
+/* Quando o Dark Mode está ativo (via JS) */
+body.dark-mode #navbar .logo img {
+    filter: brightness(0) invert(1) !important;
+    mix-blend-mode: screen !important;
+}
+
+/* Caso a página seja o Showroom (sempre preta) */
+body[style*="background: #000"] #navbar .logo img {
+    filter: brightness(0) invert(1) !important;
+}
