@@ -65,3 +65,148 @@ body {
 /* REVEAL ANIMATION */
 .reveal { opacity: 0; transform: translateY(30px); transition: 1s ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
+/* --- CONTACTOS STYLES --- */
+
+.contact-container {
+    padding: 180px 8% 100px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.contact-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    margin: 15px 0;
+}
+
+.subtitle {
+    font-weight: 200;
+    opacity: 0.7;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+/* Formulário Minimalista */
+.luxury-form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.input-group {
+    position: relative;
+    border-bottom: 1px solid rgba(176, 141, 87, 0.3);
+    padding: 5px 0;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    padding: 10px 0;
+    outline: none;
+    letter-spacing: 1px;
+}
+
+.input-group label {
+    position: absolute;
+    left: 0;
+    top: 15px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    pointer-events: none;
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0.5;
+}
+
+/* Efeito do Label subir ao escrever */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
+    top: -15px;
+    font-size: 9px;
+    color: var(--accent);
+    opacity: 1;
+}
+
+.btn-submit {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--text);
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-top: 20px;
+}
+
+.btn-submit:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* Mapa e Info */
+.map-wrapper {
+    height: 400px;
+    filter: grayscale(1) contrast(1.1) brightness(0.9);
+    border: 1px solid rgba(176, 141, 87, 0.2);
+    margin-bottom: 40px;
+    transition: filter 0.6s ease;
+}
+
+.dark-mode .map-wrapper {
+    filter: grayscale(1) invert(0.9) contrast(1.2); /* Inverte o mapa para modo escuro */
+}
+
+.info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-block h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.info-block p {
+    font-size: 13px;
+    font-weight: 200;
+    opacity: 0.7;
+}
+
+.wa-direct {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+    .contact-container { padding-top: 140px; }
+}
