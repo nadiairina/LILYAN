@@ -295,3 +295,24 @@ body[style*="background: rgb(0, 0, 0)"] .logo img {
 body {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
+/* FORÇAR VISIBILIDADE DO LOGOTIPO */
+#navbar .logo img {
+    display: block !important;
+    height: 60px !important;
+    width: auto !important;
+    transition: filter 0.4s ease !important;
+}
+
+/* Quando o Dark Mode está ativo */
+.dark-mode #navbar .logo img,
+body.dark-mode .logo img {
+    filter: brightness(0) invert(1) !important;
+    mix-blend-mode: screen !important; /* Faz o fundo preto da imagem ficar transparente */
+}
+
+/* No Showroom (que é sempre escuro) */
+body[style*="background: #000"] #navbar .logo img,
+body[style*="background: rgb(0, 0, 0)"] #navbar .logo img {
+    filter: brightness(0) invert(1) !important;
+    mix-blend-mode: screen !important;
+}
