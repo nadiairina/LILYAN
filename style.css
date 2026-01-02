@@ -285,3 +285,13 @@ body[style*="background: rgb(0, 0, 0)"] .logo img {
     filter: brightness(0) invert(1) !important;
     mix-blend-mode: screen !important; /* Remove qualquer fundo branco residual da imagem */
 }
+/* Correção Universal do Logótipo no Dark Mode */
+.dark-mode .logo img {
+    filter: brightness(0) invert(1) !important;
+    mix-blend-mode: screen !important;
+}
+
+/* Transição suave ao mudar de modo */
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
