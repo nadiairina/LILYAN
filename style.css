@@ -230,3 +230,32 @@ main {
     #navbar { padding: 0 20px; }
     .hero-content h1 { font-size: 3rem; }
 }
+/* Cores base do Dark Mode */
+.dark-mode {
+    --bg: #0a0a0a;
+    --text: #fdfcf8;
+}
+
+/* Garante que o Navbar acompanhe a cor de fundo */
+.dark-mode #navbar {
+    background: var(--bg);
+    border-bottom: 1px solid rgba(176, 141, 87, 0.2);
+}
+
+/* Inverte a cor do Logotipo para branco no Dark Mode */
+.dark-mode .logo img {
+    filter: brightness(0) invert(1);
+}
+
+/* Garante que os links do menu mudem para a cor clara */
+.dark-mode .nav-links li a,
+.dark-mode .nav-actions a,
+.dark-mode #mode-toggle {
+    color: var(--text);
+}
+
+/* Ajuste específico para o Showroom se usar a classe dark-mode */
+.dark-mode .hero-content h1, 
+.dark-mode .hero-content p {
+    color: var(--text);
+}
