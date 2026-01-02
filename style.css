@@ -259,3 +259,22 @@ main {
 .dark-mode .hero-content p {
     color: var(--text);
 }
+/* Garante que o Navbar acompanhe a cor de fundo no modo escuro */
+.dark-mode #navbar {
+    background: var(--bg) !important;
+}
+
+/* Inverte a cor do logótipo para branco */
+.dark-mode .logo img, 
+body[style*="background: #000"] .logo img {
+    filter: brightness(0) invert(1);
+}
+
+/* Força o menu a ficar branco no modo escuro */
+.dark-mode .nav-links li a,
+.dark-mode .nav-actions a,
+.dark-mode #mode-toggle,
+body[style*="background: #000"] .nav-links li a,
+body[style*="background: #000"] .nav-actions a {
+    color: #fdfcf8 !important;
+}
