@@ -9,21 +9,30 @@ const applySavedMode = () => {
     }
 };
 
-// Dark Mode Toggle com LocalStorage
 const modeBtn = document.getElementById('mode-toggle');
+
 if (modeBtn) {
     modeBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         const isDark = document.body.classList.contains('dark-mode');
         
-        // Guarda a preferência do utilizador
+        // Guarda a escolha para a próxima página
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
         
-        // Atualiza o ícone
+        // Atualiza o ícone do botão
         modeBtn.textContent = isDark ? '☀' : '✧';
+        
+        console.log("Modo escuro ativo:", isDark); // Para debug
     });
 }
 
+// Verificar ao carregar a página
+window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        if (modeBtn) modeBtn.textContent = '☀';
+    }
+});
 // Executa ao carregar qualquer página
 applySavedMode();
 
