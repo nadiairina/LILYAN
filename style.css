@@ -34,7 +34,7 @@ body {
 }
 
 .logo img {
-    height: 80px !important;
+    height: 90px !important;
     display: block !important;
     transition: filter 0.4s ease !important;
 }
