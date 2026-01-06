@@ -286,4 +286,23 @@ body {
     margin: 0 auto;
 }
 
-/* ... (resto dos estilos de atelier e contactos) ... */
+footer {
+    width: 100%;
+    text-align: center; /* Centra o texto */
+    padding: 40px 0;    /* Dá espaço acima e abaixo */
+    margin-top: 50px;   /* Afasta o footer do conteúdo principal */
+    font-family: 'Montserrat', sans-serif; /* Mantém a identidade visual */
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #000; /* Ou a cor de destaque do teu site */
+    border-bottom: 1px solid #ccc; /* Um detalhe elegante */
+    transition: 0.3s;
+}
+
+footer a:hover {
+    border-bottom: 1px solid #000;
+}
