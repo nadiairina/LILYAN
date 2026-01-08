@@ -619,3 +619,75 @@ footer a:hover {
     .menu-icon.active .bar:nth-child(2) { opacity: 0; }
     .menu-icon.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 }
+/* --- CORREÇÃO DA NAVBAR --- */
+#navbar {
+    display: flex;
+    justify-content: space-between; /* Espalha os 3 blocos: logo, links, botão */
+    align-items: center;
+    padding: 0 5%;
+    height: 120px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+/* Esconder o ícone de telemóvel no PC */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 1px;
+    background-color: var(--text);
+    transition: 0.4s;
+}
+
+/* --- RESPONSIVIDADE (Ajuste para Telemóvel) --- */
+@media (max-width: 1024px) {
+    .menu-icon {
+        display: flex; /* Mostra o hambúrguer */
+        order: 2; /* Coloca-o na posição certa */
+    }
+
+    .nav-actions {
+        order: 3; /* Botão de modo por último */
+    }
+
+    .logo {
+        order: 1; /* Logo primeiro */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Esconde o menu fora do ecrã */
+        width: 100%;
+        height: 100vh;
+        background-color: var(--bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0; /* Faz o menu aparecer */
+    }
+}
