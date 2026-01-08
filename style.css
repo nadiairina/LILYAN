@@ -33,41 +33,37 @@ body {
     border-bottom: 1px solid rgba(176, 141, 87, 0.1);
 }
 
-/* 1. ESTADO BASE (AFETA AMBOS OS MODOS) */
+/* 1. LOGO MODO CLARO (ORIGINAL) */
 .logo img {
-    height: 110px !important; 
+    height: 110px !important;
     width: auto;
     display: block !important;
     transition: all 0.4s ease-in-out !important;
-    /* Removemos filtros agressivos daqui para não "partir" o SVG no modo claro */
+    /* Removemos qualquer filtro aqui para o logo aparecer como o original */
+    filter: none !important;
 }
 
-/* 2. MODO CLARO (FORÇAR PRETO SE NECESSÁRIO) */
-/* Se o teu SVG já for preto, esta parte nem seria precisa, 
-   mas deixamos aqui para garantir consistência */
-body:not(.dark-mode) .logo img {
-    filter: brightness(0) !important;
-}
-
-/* 3. MODO ESCURO (BRANCO PURO) */
+/* 2. LOGO MODO ESCURO (INVERTE PARA BRANCO) */
 .dark-mode .logo img {
     filter: brightness(0) invert(1) !important;
 }
 
-/* 4. EFEITO HOVER (ESTILO LUXO) */
-.logo img:hover {
-    transform: scale(1.05);
-    opacity: 0.8;
+/* 3. AJUSTE PARA O SHOWROOM (QUE É SEMPRE ESCURO) */
+.dark-mode body[style*="background: #000"] .logo img,
+body.dark-mode .logo img {
+    filter: brightness(0) invert(1) !important;
 }
 
-/* ALINHAMENTO DO CONTAINER */
+/* 4. ALINHAMENTO */
 .logo {
     display: flex;
     align-items: center;
     background: transparent !important;
-    min-width: 150px; /* Garante espaço para o logo */
 }
 
+.logo img:hover {
+    transform: scale(1.05);
+}
 .nav-links { display: flex; list-style: none; gap: 30px; }
 .nav-links a { text-decoration: none; color: var(--text); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
 
