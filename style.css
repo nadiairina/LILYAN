@@ -2,7 +2,7 @@
     --bg: #fdfcf8;
     --text: #1a1a1a;
     --accent: #b08d57;
-    --nav-height: 100px;
+    --nav-height: 120px;
 }
 
 .dark-mode {
@@ -34,7 +34,7 @@ body {
 }
 
 .logo img {
-    height: 90px !important;
+    height: 120px !important;
     display: block !important;
     transition: filter 0.4s ease !important;
 }
