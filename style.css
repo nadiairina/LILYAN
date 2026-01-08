@@ -333,3 +333,32 @@ footer a:hover {
 .hero-content {
     text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
 }
+/* Estado inicial: Invisível e ligeiramente abaixo */
+.reveal-init {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+/* Estado final: Visível e na posição correta */
+.reveal-init.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animação em cascata para grupos de itens (ex: links ou badges) */
+.atelier-badges span, .nav-links li {
+    opacity: 0;
+    animation: fadeInText 0.8s ease forwards;
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Delay progressivo para elementos na mesma linha */
+.reveal-init:nth-child(2) { transition-delay: 0.2s; }
+.reveal-init:nth-child(3) { transition-delay: 0.4s; }
