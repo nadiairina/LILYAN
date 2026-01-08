@@ -6,13 +6,26 @@
     <title>Privé Showroom | LILYAN</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para a experiência do "Cofre" */
+        input[type="password"]:focus {
+            border-bottom-color: var(--accent) !important;
+            transition: 0.4s;
+        }
+        .btn-luxury:hover {
+            background: #fff !important;
+            color: #000 !important;
+        }
+    </style>
 </head>
-<body style="background: #000; color: #fff; overflow: hidden;">
+<body class="dark-mode" style="background: #000; color: #fff; overflow: hidden;">
 
 <nav id="navbar" style="background: #000; border-bottom: 1px solid #222;">
     <div class="logo">
-    <img src="LILYAN.png" alt="LILYAN" style="filter: brightness(0) invert(1); height: 60px; mix-blend-mode: screen;">
-</div>
+        <a href="index.html">
+            <img src="LILYAN.png" alt="LILYAN" style="filter: brightness(0) invert(1); height: 110px;">
+        </a>
+    </div>
     <ul class="nav-links">
         <li><a href="index.html" style="color: #fff;">Início</a></li>
         <li><a href="colecoes.html" style="color: #fff;">Coleções</a></li>
@@ -23,38 +36,34 @@
         <li><a href="contactos.html" style="color: #fff;">Contactos</a></li>
     </ul>
     <div class="nav-actions">
-        <a href="index.html" style="color: var(--accent); text-decoration: none; font-size: 10px; letter-spacing: 2px;">SAIR</a>
-        <button id="mode-toggle">✧</button>
-           
         </div>
-    </div>
 </nav>
 
-    <main>
-        <section class="hero reveal" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%;">
-            <span style="color: var(--accent); letter-spacing: 8px; font-size: 12px; margin-bottom: 10px;">EXCLUSIVO</span>
-            <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; margin: 20px 0;">Acesso Restrito</h1>
-            <p style="font-weight: 200; color: #888; max-width: 500px; margin-bottom: 50px; line-height: 1.8;">
-                Bem-vindo ao nosso espaço de curadoria privada. Introduza o seu código de convite pessoal para aceder às peças numeradas e coleções de alta joalharia.
-            </p>
-            
-            <div style="position: relative;">
-                <input type="password" placeholder="CÓDIGO DE CONVITE" 
-                    style="background: transparent; border: none; border-bottom: 1px solid #444; color: #fff; text-align: center; width: 300px; padding: 15px; font-size: 11px; letter-spacing: 6px; outline: none; transition: border-color 0.4s;">
-                <button class="btn-luxury" style="display: block; margin: 40px auto; border-color: #444; color: #fff; background: transparent; cursor: pointer;">
-                    Entrar no Cofre
-                </button>
-            </div>
-        </section>
-    </main>
+<main style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 100px;">
+    <section class="reveal">
+        <span class="label" style="color: var(--accent); letter-spacing: 5px; font-size: 10px;">CONVITE EXCLUSIVO</span>
+        <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; margin: 20px 0;">Acesso Restrito</h1>
+        <p style="font-weight: 200; color: #888; max-width: 500px; margin: 0 auto 50px auto; line-height: 1.8;">
+            Bem-vindo ao nosso espaço de curadoria privada. Introduza o seu código de convite pessoal para aceder às peças numeradas e coleções de alta joalharia.
+        </p>
+        
+        <div style="position: relative;">
+            <input type="password" placeholder="CÓDIGO DE CONVITE" 
+                style="background: transparent; border: none; border-bottom: 1px solid #444; color: #fff; text-align: center; width: 300px; padding: 15px; font-size: 11px; letter-spacing: 6px; outline: none; transition: border-color 0.4s;">
+            <button class="btn-luxury" style="display: block; margin: 40px auto; border-color: #fff; color: #fff; background: transparent; cursor: pointer;">
+                Entrar no Cofre
+            </button>
+        </div>
+    </section>
+</main>
 
-    <footer style="text-align: center; padding: 40px 20px; width: 100%;">
+<footer style="text-align: center; padding: 40px 20px; width: 100%; position: absolute; bottom: 0;">
     <div class="container">
-        <p>&copy; 2025 LILYAN. Todos os direitos reservados.<br>
+        <p style="color: #444; font-size: 10px;">&copy; 2025 LILYAN. Todos os direitos reservados.<br>
         Website desenvolvido por <a href="https://nadiairina.github.io/Nadia-Portfolio/index.html" target="_blank" style="text-decoration: none; color: inherit; font-weight: bold;">Nadia Irina.</a></p>
     </div>
 </footer>
-    
-    <script src="script.js"></script>
+
+<script src="script.js"></script>
 </body>
 </html>
