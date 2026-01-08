@@ -168,7 +168,7 @@ body {
 /* Mapa e Info */
 .map-wrapper {
     height: 400px;
-    filter: grayscale(1) contrast(1.1) brightness(0.9);
+    filter: saturate(0.8) contrast(1.1);
     border: 1px solid rgba(176, 141, 87, 0.2);
     margin-bottom: 40px;
     transition: filter 0.6s ease;
