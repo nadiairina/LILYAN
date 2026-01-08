@@ -64,6 +64,15 @@ body.dark-mode .logo img {
 .logo img:hover {
     transform: scale(1.05);
 }
+.logo img {
+    /* ... outras regras ... */
+    mix-blend-mode: multiply; /* Faz o fundo branco do SVG desaparecer no modo claro */
+}
+
+.dark-mode .logo img {
+    /* ... outras regras ... */
+    mix-blend-mode: screen; /* Faz o fundo preto desaparecer no modo escuro */
+}
 .nav-links { display: flex; list-style: none; gap: 30px; }
 .nav-links a { text-decoration: none; color: var(--text); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
 
