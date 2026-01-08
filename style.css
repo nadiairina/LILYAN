@@ -325,3 +325,11 @@ footer a:hover {
     background: #ffffff;
     color: #1a1a1a; /* Ao passar o rato, o fundo fica branco e o texto escuro */
 }
+/* Cor branca para o texto pequeno acima do título */
+.hero-content span {
+    color: #ffffff !important;
+    opacity: 1; /* Garante que não fica transparente contra o fundo */
+}
+.hero-content {
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
