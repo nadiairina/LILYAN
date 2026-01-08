@@ -33,26 +33,39 @@ body {
     border-bottom: 1px solid rgba(176, 141, 87, 0.1);
 }
 
-/* 1. ESTADO NORMAL (MODO CLARO) */
-/* Se o teu logo original for preto, ele ficará preto aqui */
+/* 1. ESTADO BASE (AFETA AMBOS OS MODOS) */
 .logo img {
-    height: 110px !important; /* Ajusta conforme preferires */
+    height: 110px !important; 
+    width: auto;
     display: block !important;
     transition: all 0.4s ease-in-out !important;
-    filter: brightness(0) saturate(100%); /* Garante que ele fica preto puro no modo claro */
+    /* Removemos filtros agressivos daqui para não "partir" o SVG no modo claro */
 }
 
-/* 2. ESTADO NO MODO ESCURO */
-/* Isto vai transformar o preto em branco puro */
+/* 2. MODO CLARO (FORÇAR PRETO SE NECESSÁRIO) */
+/* Se o teu SVG já for preto, esta parte nem seria precisa, 
+   mas deixamos aqui para garantir consistência */
+body:not(.dark-mode) .logo img {
+    filter: brightness(0) !important;
+}
+
+/* 3. MODO ESCURO (BRANCO PURO) */
 .dark-mode .logo img {
     filter: brightness(0) invert(1) !important;
 }
 
-/* 3. EFEITO AO PASSAR O RATO (OPCIONAL/CHIQUE) */
-/* Faz com que o logo brilhe ligeiramente ou mude para a cor de destaque (bronze) */
+/* 4. EFEITO HOVER (ESTILO LUXO) */
 .logo img:hover {
-    filter: sepia(100%) saturate(300%) hue-rotate(10deg) brightness(0.7) !important;
-    transform: scale(1.02);
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+/* ALINHAMENTO DO CONTAINER */
+.logo {
+    display: flex;
+    align-items: center;
+    background: transparent !important;
+    min-width: 150px; /* Garante espaço para o logo */
 }
 
 .nav-links { display: flex; list-style: none; gap: 30px; }
