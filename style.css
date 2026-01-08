@@ -33,28 +33,26 @@ body {
     border-bottom: 1px solid rgba(176, 141, 87, 0.1);
 }
 
+/* 1. ESTADO NORMAL (MODO CLARO) */
+/* Se o teu logo original for preto, ele ficará preto aqui */
 .logo img {
-    height: 120px !important;
+    height: 110px !important; /* Ajusta conforme preferires */
     display: block !important;
-    transition: filter 0.4s ease !important;
+    transition: all 0.4s ease-in-out !important;
+    filter: brightness(0) saturate(100%); /* Garante que ele fica preto puro no modo claro */
 }
 
-/* REGRA PARA O LOGO NO MODO ESCURO */
+/* 2. ESTADO NO MODO ESCURO */
+/* Isto vai transformar o preto em branco puro */
 .dark-mode .logo img {
-    /* Em vez de apenas inverter, vamos remover o fundo escuro da imagem */
     filter: brightness(0) invert(1) !important;
-    mix-blend-mode: screen !important; /* Isto remove fundos pretos residuais */
 }
 
-/* Garante que o container do logo não tem fundos estranhos */
-.logo {
-    display: flex;
-    align-items: center;
-    background: transparent !important;
-}
-.dark-mode .logo img {
-    /* Filtro avançado para transformar preto em branco mantendo transparência */
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+/* 3. EFEITO AO PASSAR O RATO (OPCIONAL/CHIQUE) */
+/* Faz com que o logo brilhe ligeiramente ou mude para a cor de destaque (bronze) */
+.logo img:hover {
+    filter: sepia(100%) saturate(300%) hue-rotate(10deg) brightness(0.7) !important;
+    transform: scale(1.02);
 }
 
 .nav-links { display: flex; list-style: none; gap: 30px; }
