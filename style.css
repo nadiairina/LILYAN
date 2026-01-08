@@ -306,3 +306,22 @@ footer a {
 footer a:hover {
     border-bottom: 1px solid #000;
 }
+/* HERO SECTION - CORES EM BRANCO */
+.hero-content h1 {
+    color: #ffffff; /* Cor branca para o título "A Poesia do Metal" */
+}
+
+.hero-content p {
+    color: #ffffff; /* Cor branca para o subtítulo */
+    opacity: 0.9;   /* Aumentei ligeiramente a opacidade para facilitar a leitura */
+}
+
+.btn-luxury {
+    color: #ffffff; /* Cor branca para o texto do botão "Ver Peças" */
+    border-color: #ffffff; /* Opcional: muda a borda para branco também para combinar */
+}
+
+.btn-luxury:hover {
+    background: #ffffff;
+    color: #1a1a1a; /* Ao passar o rato, o fundo fica branco e o texto escuro */
+}
