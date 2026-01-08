@@ -39,10 +39,18 @@ body {
     transition: filter 0.4s ease !important;
 }
 
-/* REGRA DE OURO PARA O LOGO NO MODO ESCURO */
+/* REGRA PARA O LOGO NO MODO ESCURO */
 .dark-mode .logo img {
+    /* Em vez de apenas inverter, vamos remover o fundo escuro da imagem */
     filter: brightness(0) invert(1) !important;
-    mix-blend-mode: screen !important;
+    mix-blend-mode: screen !important; /* Isto remove fundos pretos residuais */
+}
+
+/* Garante que o container do logo não tem fundos estranhos */
+.logo {
+    display: flex;
+    align-items: center;
+    background: transparent !important;
 }
 
 .nav-links { display: flex; list-style: none; gap: 30px; }
