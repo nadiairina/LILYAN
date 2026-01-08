@@ -84,3 +84,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100);
     });
 });
+// Lógica do Menu Mobile
+const menuIcon = document.getElementById('menu-icon');
+const navLinks = document.getElementById('nav-links');
+
+if (menuIcon) {
+    menuIcon.addEventListener('click', () => {
+        menuIcon.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        
+        // Impede o scroll do fundo quando o menu está aberto
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+    });
+}
+
+// Fechar menu ao clicar num link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        menuIcon.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+});
