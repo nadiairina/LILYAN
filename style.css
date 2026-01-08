@@ -390,3 +390,82 @@ footer a:hover {
 /* Delay progressivo para elementos na mesma linha */
 .reveal-init:nth-child(2) { transition-delay: 0.2s; }
 .reveal-init:nth-child(3) { transition-delay: 0.4s; }
+/* --- LAYOUT DA PÁGINA DE COLEÇÕES --- */
+
+.collection-grid {
+    display: grid;
+    /* Grelha moderna: 3 colunas em desktop, 2 em tablet, 1 em mobile */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px 40px; /* Espaçamento generoso entre as peças */
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s ease;
+}
+
+/* Contentor da Imagem */
+.img-container {
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Formato vertical elegante para joias */
+    overflow: hidden;
+    background-color: #f7f7f7; /* Fundo neutro enquanto carrega */
+    margin-bottom: 20px;
+}
+
+.dark-mode .img-container {
+    background-color: #151515;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preenche o espaço com classe */
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Efeito de Luxo: Zoom suave na imagem ao passar o rato */
+.card:hover .img-container img {
+    transform: scale(1.08);
+}
+
+/* Informação da Peça */
+.card-info {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.card-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.card-info p {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 300;
+}
+
+/* Ajuste para o Header da Coleção */
+.collection-header {
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+    text-align: center;
+}
+
+.collection-header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
