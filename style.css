@@ -5,7 +5,7 @@
     --nav-height: 120px;
 }
 
-:dark-mode {
+.dark-mode {
 
     --bg: #0a0a0a;
 
