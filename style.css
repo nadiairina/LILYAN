@@ -6,8 +6,14 @@
 }
 
 .dark-mode {
-    --bg: #0a0a0a;
-    --text: #fdfcf8;
+    /* Um tom de grafite profundo, mais luxuoso que o preto puro */
+    --bg: #121212; 
+    
+    /* Um bege areia muito claro para o texto não cansar a vista */
+    --text: #e5e2da; 
+    
+    /* O dourado fica ligeiramente mais brilhante no escuro */
+    --accent: #c5a676; 
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
