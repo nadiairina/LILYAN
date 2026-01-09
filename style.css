@@ -4,26 +4,13 @@
     --accent: #b08d57;
     --nav-height: 120px;
 }
-.dark-mode {
-    /* Um cinza grafite profundo (ébano) em vez de preto total */
-    --bg: #121212; 
-    
-    /* Um creme suave para o texto, facilitando a leitura das fontes serifadas */
-    --text: #e5e2da; 
-    
-    /* Um dourado ligeiramente mais quente para destacar no escuro */
-    --accent: #c5a676; 
-}
 
-/* Ajuste extra para as divisórias no modo escuro não ficarem demasiado brilhantes */
-.dark-mode .divider {
-    background-color: var(--accent);
-    opacity: 0.5;
-}
+:dark-mode {
 
-/* Ajuste para as cartas de produtos no modo escuro */
-.dark-mode .img-container {
-    background-color: rgba(255, 255, 255, 0.03);
+    --bg: #0a0a0a;
+
+    --text: #fdfcf8;
+
 }
 
 body {
