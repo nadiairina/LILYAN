@@ -4,9 +4,7 @@
     --accent: #b08d57;
     --nav-height: 120px;
 }
-
-/* --- DARK MODE REFINADO --- */
-:dark-mode {
+.dark-mode {
     /* Um cinza grafite profundo (ébano) em vez de preto total */
     --bg: #121212; 
     
@@ -15,6 +13,17 @@
     
     /* Um dourado ligeiramente mais quente para destacar no escuro */
     --accent: #c5a676; 
+}
+
+/* Ajuste extra para as divisórias no modo escuro não ficarem demasiado brilhantes */
+.dark-mode .divider {
+    background-color: var(--accent);
+    opacity: 0.5;
+}
+
+/* Ajuste para as cartas de produtos no modo escuro */
+.dark-mode .img-container {
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 body {
