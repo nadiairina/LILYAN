@@ -5,18 +5,17 @@
     --nav-height: 120px;
 }
 
-.dark-mode {
-    /* Um tom de grafite profundo, mais luxuoso que o preto puro */
+/* --- DARK MODE REFINADO --- */
+:dark-mode {
+    /* Um cinza grafite profundo (ébano) em vez de preto total */
     --bg: #121212; 
     
-    /* Um bege areia muito claro para o texto não cansar a vista */
+    /* Um creme suave para o texto, facilitando a leitura das fontes serifadas */
     --text: #e5e2da; 
     
-    /* O dourado fica ligeiramente mais brilhante no escuro */
+    /* Um dourado ligeiramente mais quente para destacar no escuro */
     --accent: #c5a676; 
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--bg);
