@@ -1,6 +1,6 @@
 /**
  * LILYAN - Script de Interatividade e Animações de Luxo
- * Versão Final: Dark Mode Corrigido + Animações Smooth Reveal
+ * Versão Final: Dark Mode + Scroll Reveal + Menu Mobile Corrigido
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,21 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const modeBtn = document.getElementById('mode-toggle');
     const body = document.body;
 
-    // Função para atualizar o ícone do botão
     const updateIcon = (isDark) => {
         if (modeBtn) {
             modeBtn.textContent = isDark ? '☀' : '✧';
         }
     };
 
-    // Aplicar o tema guardado ao carregar
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark' || body.classList.contains('dark-mode')) {
         body.classList.add('dark-mode');
         updateIcon(true);
     }
 
-    // Evento de clique para alternar o modo
     if (modeBtn) {
         modeBtn.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
@@ -34,7 +31,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- 2. ANIMAÇÕES DE REVELAÇÃO (SCROLL REVEAL) ---
+    // --- 2. LÓGICA DO MENU MOBILE (HAMBÚRGUER) ---
+    const menuIcon = document.getElementById('menu-icon');
+    const navLinksContainer = document.getElementById('nav-links');
+
+    if (menuIcon && navLinksContainer) {
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('active');
+            navLinksContainer.classList.toggle('active');
+            
+            // Impede o scroll do site quando o menu está aberto
+            document.body.style.overflow = navLinksContainer.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Fechar menu ao clicar num link (importante para navegação interna)
+        const links = navLinksContainer.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menuIcon.classList.remove('active');
+                navLinksContainer.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    }
+
+
+    // --- 3. ANIMAÇÕES DE REVELAÇÃO (SCROLL REVEAL) ---
     const observerOptions = {
         threshold: 0.15,
         rootMargin: "0px 0px -50px 0px"
@@ -49,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Seleciona todos os elementos para animar (incluindo os teus blocos de texto e imagens)
     const elementsToAnimate = document.querySelectorAll(
         '.reveal, .atelier-visual, .info-block, .luxury-form, .hero-content, .map-wrapper, .card'
     );
@@ -60,20 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- 3. EFEITO DE PARALLAX SUBTIL NO HERO ---
+    // --- 4. EFEITO DE PARALLAX NO HERO ---
     const hero = document.querySelector('.hero-slider');
     if (hero) {
         window.addEventListener('scroll', () => {
             const scroll = window.pageYOffset;
-            // Move o fundo ligeiramente para dar profundidade
             hero.style.backgroundPositionY = (scroll * 0.4) + 'px';
         });
     }
 
 
-    // --- 4. ANIMAÇÃO DO MENU (STAGGERED LOAD) ---
-    const navLinks = document.querySelectorAll('.nav-links li');
-    navLinks.forEach((link, index) => {
+    // --- 5. ANIMAÇÃO DE ENTRADA DO MENU (DESKTOP) ---
+    const navLinksItems = document.querySelectorAll('.nav-links li');
+    navLinksItems.forEach((link, index) => {
         link.style.opacity = '0';
         link.style.transform = 'translateY(-10px)';
         link.style.transition = `all 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards ${index * 0.1}s`;
@@ -84,34 +104,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100);
     });
 });
-// Lógica do Menu Mobile
-const menuIcon = document.getElementById('menu-icon');
-const navLinks = document.getElementById('nav-links');
-
-if (menuIcon) {
-    menuIcon.addEventListener('click', () => {
-        menuIcon.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        
-        // Impede o scroll do fundo quando o menu está aberto
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
-    });
-}
-
-// Fechar menu ao clicar num link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        menuIcon.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    });
-});
-const menuIcon = document.getElementById('menu-icon');
-const navLinks = document.getElementById('nav-links');
-
-if (menuIcon) {
-    menuIcon.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuIcon.classList.toggle('active');
-    });
-}
