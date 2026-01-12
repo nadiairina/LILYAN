@@ -104,3 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100);
     });
 });
+// Dentro do script.js, na parte do updateIcon:
+const updateIcon = (isDark) => {
+    if (modeBtn) {
+        modeBtn.textContent = isDark ? '☀' : '✧';
+        // Opcional: muda a cor da borda do botão quando ativo
+        modeBtn.style.borderColor = isDark ? '#fdfcf8' : '#b08d57';
+    }
+};
