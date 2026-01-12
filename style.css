@@ -712,3 +712,12 @@ footer a:hover {
         background: transparent !important;
     }
 }
+#mode-toggle {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--text);
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 1100; /* Garante que fica por cima de tudo */
+    font-size: 1.2rem;
+}
