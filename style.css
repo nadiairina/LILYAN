@@ -31,19 +31,21 @@ body {
     border-bottom: 1px solid rgba(176, 141, 87, 0.1);
 }
 
-/* 1. LOGO MODO CLARO (ORIGINAL) */
-/* 1. MODO CLARO (Original com detalhes) */
+/* 1. CONFIGURAÇÃO GLOBAL DO LOGO */
 .logo img {
     height: 110px !important;
     width: auto;
     transition: all 0.4s ease-in-out !important;
-    /* Mantém o SVG exatamente como ele é */
+    filter: none !important;          /* Remove qualquer inversão de cor */
+    mix-blend-mode: normal !important; /* Mantém as cores originais */
 }
 
-/* 2. MODO ESCURO (Inverte mantendo detalhes) */
-
-
-
+/* 2. REMOÇÃO DE REGRAS ESPECÍFICAS DE MODO ESCURO PARA O LOGO */
+/* Certifique-se de que NÃO existem estas linhas no seu ficheiro: */
+.dark-mode .logo img, 
+.dark-mode body .logo img {
+    filter: none !important;
+}
 
 /* 4. ALINHAMENTO */
 .logo {
