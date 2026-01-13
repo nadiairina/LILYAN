@@ -38,19 +38,12 @@ body {
     width: auto;
     transition: all 0.4s ease-in-out !important;
     /* Mantém o SVG exatamente como ele é */
-    filter: none !important; 
 }
 
 /* 2. MODO ESCURO (Inverte mantendo detalhes) */
-.dark-mode .logo img {
-    /* O invert(1) sozinho troca o preto por branco, mas preserva contrastes internos */
-    filter: invert(1) !important;
-}
 
-/* 3. SHOWROOM (Garante o mesmo efeito) */
-.dark-mode body .logo img {
-    filter: invert(1) !important;
-}
+
+
 
 /* 4. ALINHAMENTO */
 .logo {
@@ -62,15 +55,7 @@ body {
 .logo img:hover {
     transform: scale(1.05);
 }
-.logo img {
-    /* ... outras regras ... */
-    mix-blend-mode: multiply; /* Faz o fundo branco do SVG desaparecer no modo claro */
-}
 
-.dark-mode .logo img {
-    /* ... outras regras ... */
-    mix-blend-mode: screen; /* Faz o fundo preto desaparecer no modo escuro */
-}
 .nav-links { display: flex; list-style: none; gap: 30px; }
 .nav-links a { text-decoration: none; color: var(--text); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
 
@@ -200,9 +185,7 @@ body {
     transition: filter 0.6s ease;
 }
 
-.dark-mode .map-wrapper {
-    filter: grayscale(1) invert(0.9) contrast(1.2); /* Inverte o mapa para modo escuro */
-}
+.
 
 .info-details {
     display: flex;
