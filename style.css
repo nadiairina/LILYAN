@@ -782,3 +782,30 @@ footer a:hover {
         padding-top: 140px; 
     }
 }
+#mode-toggle {
+    order: 1; /* Garante que é o primeiro item no flexbox */
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--text);
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-right: 10px; /* Empurra o ícone do menu mais para a direita */
+}
+
+.menu-icon {
+    order: 2; /* Garante que o hambúrguer fica à direita do botão */
+}
+@media (max-width: 1024px) {
+    .nav-actions {
+        position: relative;
+        right: 0;
+        gap: 15px;
+    }
+    
+    #mode-toggle {
+        margin-right: 5px;
+        font-size: 18px; /* Aumenta um pouco para facilitar o toque */
+    }
+}
