@@ -231,12 +231,56 @@ body {
     font-weight: 400;
 }
 
-/* Responsividade */
-@media (max-width: 992px) {
-    .contact-grid { grid-template-columns: 1fr; gap: 60px; }
-    .contact-container { padding-top: 140px; }
+/* --- RESPONSIVIDADE GERAL (Navbar e Estrutura) --- */
+@media (max-width: 1024px) {
+    
+    /* Corrige o posicionamento do Dark Mode e Hamburguer */
+    #navbar {
+        padding: 0 20px;
+    }
+
+    .nav-actions {
+        order: 2; /* Dark mode no meio */
+        margin-right: 15px;
+        z-index: 1001;
+    }
+
+    .menu-icon {
+        display: flex; /* Mostra o hambúrguer */
+        order: 3;      /* Hamburguer à direita */
+        z-index: 1001;
+    }
+
+    .logo {
+        order: 1;
+        flex-grow: 1;
+    }
+
+    /* O menu lateral propriamente dito */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--bg);
+        z-index: 1000;
+        /* ... restantes estilos do menu ... */
+    }
 }
-/* ... (mantenha o início igual) ... */
+
+/* --- RESPONSIVIDADE ESPECÍFICA (Páginas) --- */
+@media (max-width: 992px) {
+    /* Mantenha isto! É o que impede o formulário de contactos de ficar "esmagado" */
+    .contact-grid { 
+        grid-template-columns: 1fr; 
+        gap: 60px; 
+    }
+    
+    .contact-container { 
+        padding-top: 140px; 
+    }
+}
 
 /* HERO SECTION - INDEX */
 .hero-slider {
