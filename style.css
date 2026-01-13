@@ -733,33 +733,23 @@ footer a:hover {
         right: 0; /* Faz o menu aparecer */
     }
 }
-#navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5%;
-    height: 120px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    background: var(--bg);
-}
+
 
 /* --- RESPONSIVIDADE (Ajuste para Telemóvel / Tablet) --- */
 @media (max-width: 1024px) {
-    #navbar {
-        padding: 0 20px; /* Mais espaço nas bordas em mobile */
+    .nav-actions {
+        order: 2; /* Dark Mode no meio */
+        display: flex !important;
+        z-index: 1100; /* MAIS ALTO que o z-index da .nav-links (1000) */
+        margin-right: 15px;
     }
-
-    .logo img {
-        height: 80px !important; /* Logo um pouco menor em mobile */
-    }
-
+    
     .menu-icon {
-        display: flex; 
-        order: 3; /* Hambúrguer na ponta direita */
+        order: 3; /* Hambúrguer à direita */
+        display: flex;
+        z-index: 1100;
     }
+}
 
     .nav-actions {
         display: flex !important;
