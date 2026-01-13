@@ -735,32 +735,33 @@ footer a:hover {
 }
 
 
-/* --- RESPONSIVIDADE (Ajuste para Telemóvel / Tablet) --- */
+/* --- RESPONSIVIDADE (Ajuste para Telemóvel e Tablet) --- */
 @media (max-width: 1024px) {
-    .nav-actions {
-        order: 2; /* Dark Mode no meio */
-        display: flex !important;
-        z-index: 1100; /* MAIS ALTO que o z-index da .nav-links (1000) */
-        margin-right: 15px;
+    #navbar {
+        padding: 0 20px;
+        height: 100px; /* Um pouco mais compacta em mobile */
     }
-    
+
+    .logo img {
+        height: 80px !important;
+    }
+
     .menu-icon {
-        order: 3; /* Hambúrguer à direita */
-        display: flex;
-        z-index: 1100;
+        display: flex; /* Mostra o hambúrguer */
+        order: 3;      /* Fica à direita */
+        z-index: 1100; /* Acima do menu lateral */
     }
-}
 
     .nav-actions {
         display: flex !important;
-        order: 2; /* Dark Mode fica entre o logo e o hambúrguer */
+        order: 2;      /* Dark Mode fica no centro-direita */
         margin-right: 15px;
-        z-index: 1100; /* Garante que o botão responde ao clique */
+        z-index: 1100; /* Garante que o clique funciona */
     }
 
     .logo {
-        order: 1;
-        flex: 1; /* Empurra os ícones para a direita */
+        order: 1;      /* Logo à esquerda */
+        flex: 1;
     }
 
     .nav-links {
@@ -774,15 +775,19 @@ footer a:hover {
         justify-content: center;
         align-items: center;
         transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1000;
+        z-index: 1000; /* Abaixo dos ícones de ação */
     }
 
     .nav-links.active {
         right: 0;
     }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
 }
 
-/* --- AJUSTES PARA PÁGINA DE CONTACTOS --- */
+/* --- AJUSTES ESPECÍFICOS (Páginas) --- */
 @media (max-width: 992px) {
     .contact-grid { 
         grid-template-columns: 1fr; 
