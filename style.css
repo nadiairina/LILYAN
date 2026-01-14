@@ -1089,3 +1089,32 @@ h1, .hero-content h1 {
     font-weight: 700 !important;
     text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6) !important;
 }
+/* 1. Cores base da Navbar (Respeitam o Dark/Light Mode) */
+#navbar {
+    background-color: var(--bg); /* Fundo dinâmico */
+    transition: background 0.3s ease;
+}
+
+.nav-links li a {
+    color: var(--text) !important; /* Texto dinâmico: preto no light, branco no dark */
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.menu-icon .bar {
+    background-color: var(--text) !important; /* Barras dinâmicas */
+}
+
+/* 2. EXCEPÇÃO: Estilo para quando a imagem ocupa o ecrã todo (Hero) */
+/* Adicionamos esta classe apenas onde a imagem é o fundo principal */
+.on-hero .nav-links li a,
+.on-hero .menu-icon .bar {
+    color: #ffffff !important;
+    background-color: #ffffff !important;
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+
+.on-hero #navbar {
+    background: transparent !important;
+    border-bottom: none !important;
+}
