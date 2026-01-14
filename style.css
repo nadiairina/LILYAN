@@ -1029,34 +1029,24 @@ footer a:hover {
 
 @media (max-width: 992px) {
     #navbar {
-        height: 70px;
-        padding: 0 30px !important; /* Aumenta a distância das bordas (ajuste aqui se quiser mais para a esquerda) */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        height: 80px !important; /* Barra fina */
+        padding: 0 40px !important; /* Afasta o logo e o hamburguer das bordas */
+        display: flex !important;
+        justify-content: space-between !important;
     }
 
-    /* O ícone do menu agora respeita o padding da navbar */
-    .menu-icon {
-    display: none; /* Escondido no PC */
-    cursor: pointer;
-    z-index: 2000;
-    padding: 10px;
-}
+    .logo img {
+        height: 50px !important; /* Logo menor no mobile */
+    }
 
-.menu-icon .bar {
-    width: 25px;
-    height: 2px;
-    background-color: var(--text); /* Garante que a cor segue o tema */
-    margin: 5px 0;
-    transition: 0.4s;
-    display: block;
-}
-    /* Menu que desliza da esquerda */
+    .menu-icon {
+        display: block !important; /* OBRIGA a aparecer */
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
-        left: -100%; 
+        left: -100%; /* Vem da ESQUERDA */
         width: 280px;
         height: 100vh;
         background: var(--bg);
@@ -1065,20 +1055,16 @@ footer a:hover {
         align-items: flex-start;
         padding-left: 40px;
         transition: 0.5s ease;
+        z-index: 1500;
         box-shadow: 10px 0 20px rgba(0,0,0,0.1);
-        z-index: 1100;
+        display: flex !important;
     }
 
     .nav-links.active {
-        left: 0;
+        left: 0 !important;
     }
 
-    .nav-links li {
-        margin: 15px 0;
-    }
-}
-
-    /* Estilo do botão dentro do menu mobile */
+    /* Estilo do toggle dentro do menu */
     .mobile-toggle-item {
         margin-top: 30px;
         list-style: none;
