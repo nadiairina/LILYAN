@@ -1,13 +1,13 @@
 :root {
-    --bg: #fdfcf8;
-    --text: #1a1a1a;
-    --accent: #b08d57;
-    --nav-height: 120px;
+    --bg: #fdfcf8;      /* Fundo do site claro */
+    --menu-txt: #ffffff; /* Letras do MENU BRANCAS no Light Mode */
+    --menu-bg: #1a1a1a;  /* Fundo do menu mobile escuro para contrastar */
 }
 
 .dark-mode {
-    --bg: #0a0a0a;
-    --text: #fdfcf8;
+    --bg: #0a0a0a;      /* Fundo do site escuro */
+    --menu-txt: #000000; /* Letras do MENU PRETAS no Dark Mode */
+    --menu-bg: #ffffff;  /* Fundo do menu mobile claro para contrastar */
 }
 
 body {
@@ -1131,4 +1131,28 @@ h1, .hero-content h1 {
     .nav-links {
         background-color: var(--bg) !important;
     }
+}
+/* Links da Navbar */
+.nav-links li a {
+    color: var(--menu-txt) !important;
+    font-weight: 600;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2); /* Sombra leve para ler branco no fundo claro */
+}
+
+/* Barras do Hambúrguer */
+.menu-icon .bar {
+    background-color: var(--menu-txt) !important;
+}
+
+/* No Mobile: O fundo do menu tem de mudar para o texto se ver */
+@media (max-width: 992px) {
+    .nav-links {
+        background-color: var(--menu-bg) !important;
+    }
+}
+h1, .hero-content h1 {
+    color: var(--menu-txt) !important;
+    font-weight: 700;
+    /* Adicionamos uma sombra quando a letra é branca para não "sumir" no fundo pérola */
+    text-shadow: var(--menu-txt) == #ffffff ? 2px 2px 10px rgba(0,0,0,0.2) : none;
 }
