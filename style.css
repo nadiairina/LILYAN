@@ -1040,10 +1040,7 @@ body, html {
 .dark-mode .nav-links li a:hover {
     color: var(--accent) !important; /* Dourado ao passar o rato */
 }
-.dark-mode .logo img {
-    /* Inverte a cor (se for preto vira branco) e aumenta a exposição */
-    filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255,255,255,0.4)) !important;
-}
+
 .dark-mode h1, 
 .dark-mode .hero-content h1 {
     color: #fdfcf8 !important;
