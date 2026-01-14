@@ -603,19 +603,21 @@ footer a:hover {
     .collection-grid { grid-template-columns: 1fr; gap: 50px; }
 }
 /* ICONE HAMBÚRGUER */
+/* Localize e substitua por isto */
 .menu-icon {
-    display: none; /* Escondido no computador */
-    flex-direction: column;
-    gap: 6px;
+    display: none; /* Escondido no PC */
     cursor: pointer;
-    z-index: 2000;
+    z-index: 2000 !important; 
+    padding: 10px;
+    margin-right: 20px; /* Isto afasta o menu do canto direito */
 }
 
 .menu-icon .bar {
-    width: 28px;
-    height: 1px;
-    background-color: var(--text);
-    transition: 0.4s;
+    width: 25px;
+    height: 2px;
+    background-color: var(--text) !important; /* Força a cor preta ou branca conforme o modo */
+    margin: 5px 0;
+    display: block; /* Garante que as barras existem */
 }
 
 /* RESPONSIVIDADE PARA TELEMÓVEL */
@@ -671,20 +673,22 @@ footer a:hover {
 }
 
 /* Esconder o ícone de telemóvel no PC */
+/* Localize e substitua por isto */
 .menu-icon {
-    display: none;
+    display: none; /* Escondido no PC */
     cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
+    z-index: 2000 !important; 
+    padding: 10px;
+    margin-right: 20px; /* Isto afasta o menu do canto direito */
 }
 
 .menu-icon .bar {
     width: 25px;
-    height: 1px;
-    background-color: var(--text);
-    transition: 0.4s;
+    height: 2px;
+    background-color: var(--text) !important; /* Força a cor preta ou branca conforme o modo */
+    margin: 5px 0;
+    display: block; /* Garante que as barras existem */
 }
-
 /* --- RESPONSIVIDADE (Ajuste para Telemóvel) --- */
 @media (max-width: 1024px) {
     .menu-icon {
@@ -731,12 +735,22 @@ footer a:hover {
         height: 80px !important;
     }
 
-    .menu-icon {
-        display: flex; /* Mostra o hambúrguer */
-        order: 3;      /* Fica à direita */
-        z-index: 1100; /* Acima do menu lateral */
-    }
+    /* Localize e substitua por isto */
+.menu-icon {
+    display: none; /* Escondido no PC */
+    cursor: pointer;
+    z-index: 2000 !important; 
+    padding: 10px;
+    margin-right: 20px; /* Isto afasta o menu do canto direito */
+}
 
+.menu-icon .bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text) !important; /* Força a cor preta ou branca conforme o modo */
+    margin: 5px 0;
+    display: block; /* Garante que as barras existem */
+}
     .nav-actions {
         display: flex !important;
         order: 2;      /* Dark Mode fica no centro-direita */
@@ -851,20 +865,22 @@ footer a:hover {
 /* --- AJUSTES RESPONSIVOS (MOBILE) --- */
 @media (max-width: 992px) {
     /* 1. Garante que o ícone do hambúrguer aparece */
-    .menu-icon {
-        display: block !important; /* Força a aparição */
-        cursor: pointer;
-        z-index: 1200;
-        position: relative;
-    }
+   /* Localize e substitua por isto */
+.menu-icon {
+    display: none; /* Escondido no PC */
+    cursor: pointer;
+    z-index: 2000 !important; 
+    padding: 10px;
+    margin-right: 20px; /* Isto afasta o menu do canto direito */
+}
 
-    .menu-icon .bar {
-        width: 28px;
-        height: 2px;
-        background-color: var(--text);
-        margin: 6px 0;
-        transition: 0.4s;
-    }
+.menu-icon .bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text) !important; /* Força a cor preta ou branca conforme o modo */
+    margin: 5px 0;
+    display: block; /* Garante que as barras existem */
+}
 
     /* 2. Menu lateral vindo da esquerda */
     .nav-links {
@@ -920,18 +936,22 @@ footer a:hover {
         padding: 0 20px;
     }
 
-    .menu-icon {
-        display: block !important; /* OBRIGA a aparecer no mobile */
-    }
+    /* Localize e substitua por isto */
+.menu-icon {
+    display: none; /* Escondido no PC */
+    cursor: pointer;
+    z-index: 2000 !important; 
+    padding: 10px;
+    margin-right: 20px; /* Isto afasta o menu do canto direito */
+}
 
-    /* As 3 barras do menu */
-    .menu-icon .bar {
-        width: 25px;
-        height: 2px;
-        background-color: var(--text) !important; /* Cor variável conforme o modo */
-        margin: 5px 0;
-        display: block;
-    }
+.menu-icon .bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text) !important; /* Força a cor preta ou branca conforme o modo */
+    margin: 5px 0;
+    display: block; /* Garante que as barras existem */
+}
 
     /* O menu que desliza da ESQUERDA */
     .nav-links {
@@ -961,19 +981,21 @@ footer a:hover {
     }
 }
 /* --- ESTILO DO HAMBURGUER --- */
+/* Localize e substitua por isto */
 .menu-icon {
     display: none; /* Escondido no PC */
     cursor: pointer;
-    z-index: 2000;
+    z-index: 2000 !important; 
     padding: 10px;
+    margin-right: 20px; /* Isto afasta o menu do canto direito */
 }
 
 .menu-icon .bar {
     width: 25px;
     height: 2px;
-    background-color: var(--text);
+    background-color: var(--text) !important; /* Força a cor preta ou branca conforme o modo */
     margin: 5px 0;
-    transition: 0.4s;
+    display: block; /* Garante que as barras existem */
 }
 
 @media (max-width: 992px) {
