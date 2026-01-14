@@ -973,3 +973,32 @@ footer a:hover {
         display: block !important;
     }
 }
+/* Garante que o corpo do site não tem margens escondidas */
+body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Faz a imagem preencher tudo */
+.hero-slider {
+    width: 100vw;          /* 100% da largura da janela */
+    height: 100vh;         /* 100% da altura da janela */
+    margin: 0;             /* Remove qualquer margem que cause a borda branca */
+    background-size: cover; /* Faz a imagem esticar sem distorcer */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar {
+    position: fixed;       /* Fixa no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent; /* Podes mudar para rgba(253, 252, 248, 0.8) se quiseres cor */
+    box-sizing: border-box;  /* Impede que o padding empurre a barra para fora */
+}
