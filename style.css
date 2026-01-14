@@ -1331,31 +1331,45 @@ body, html {
         background-color: var(--text) !important;
     }
 }
-/* --- AJUSTE ESPECÍFICO SHOWROOM --- */
+/* --- AJUSTE DEFINITIVO SHOWROOM --- */
 
-/* 1. Sobe o conteúdo do Cofre */
+/* 1. Sobe o conteúdo (Convite) */
 .page-showroom .hero-content {
     position: absolute;
-    top: 45%;               /* Move o ponto central para cima */
+    top: 40%; /* Sobe o bloco para o terço superior/médio */
     left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza perfeitamente no novo ponto */
+    transform: translate(-50%, -50%);
     width: 90%;
     max-width: 600px;
-    margin: 0 !important;   /* Remove margens que empurram para baixo */
-    padding: 0 !important;
+    margin: 0 !important;
 }
 
-/* 2. Garante que a linha do Footer aparece e fica no sítio */
+/* 2. A Linha do Footer (Igual à da Navbar) */
 .page-showroom footer {
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
-    padding: 30px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important; /* A linha que faltava */
+    height: 100px; /* Ajusta para a altura que preferires */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
+    
+    /* Esta é a linha exata que usas no resto do site */
+    border-top: 1px solid rgba(176, 141, 87, 0.1) !important; 
 }
 
-/* 3. Ajuste para a Navbar na Home/Showroom (Sem linha no topo se preferires) */
+/* 3. Ajuste do texto no footer do showroom */
+.page-showroom footer p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #444 !important;
+    margin: 0;
+}
+
+/* 4. Remove a linha do topo apenas aqui para o foco ser o fundo */
 .page-showroom #navbar {
     border-bottom: none !important;
+    background: transparent !important;
 }
