@@ -903,3 +903,60 @@ footer a:hover {
         font-size: 1.2rem;
     }
 }
+/* --- FORÇAR APARIÇÃO DO HAMBÚRGUER --- */
+.menu-icon {
+    display: none; /* Escondido por padrão no PC */
+    cursor: pointer;
+    z-index: 2000 !important; /* Valor muito alto para ficar acima de tudo */
+    padding: 10px;
+    background: transparent;
+}
+
+/* --- MODO RESPONSIVO --- */
+@media (max-width: 992px) {
+    #navbar {
+        height: 70px; /* Barra mais fina no mobile */
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .menu-icon {
+        display: block !important; /* OBRIGA a aparecer no mobile */
+    }
+
+    /* As 3 barras do menu */
+    .menu-icon .bar {
+        width: 25px;
+        height: 2px;
+        background-color: var(--text) !important; /* Cor variável conforme o modo */
+        margin: 5px 0;
+        display: block;
+    }
+
+    /* O menu que desliza da ESQUERDA */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Escondido à esquerda */
+        width: 280px;
+        height: 100vh;
+        background: var(--bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 40px;
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1500;
+        box-shadow: 10px 0 20px rgba(0,0,0,0.1);
+        display: flex !important; /* Garante que os links existem dentro da caixa */
+    }
+
+    .nav-links.active {
+        left: 0 !important; /* Mostra o menu */
+    }
+
+    /* Esconder os links centrais do desktop para não flutuarem no meio do ecrã */
+    .nav-links:not(.active) {
+        pointer-events: none;
+    }
+}
