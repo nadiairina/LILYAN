@@ -955,5 +955,58 @@ footer a:hover {
     }
 }
 
-/* Esconde o toggle do menu principal se estiver no PC (opcional, se quiseres outro na lateral) */
-/* No seu caso, mantemos o mesmo botão que apenas muda de posição via CSS */
+/* --- AJUSTES RESPONSIVOS (MOBILE) --- */
+@media (max-width: 992px) {
+    /* 1. Garante que o ícone do hambúrguer aparece */
+    .menu-icon {
+        display: block !important; /* Força a aparição */
+        cursor: pointer;
+        z-index: 1200;
+        position: relative;
+    }
+
+    .menu-icon .bar {
+        width: 28px;
+        height: 2px;
+        background-color: var(--text);
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    /* 2. Menu lateral vindo da esquerda */
+    .nav-links {
+        display: flex !important; /* Garante que o flex funciona */
+        position: fixed;
+        top: 0;
+        left: -100%; /* Começa escondido à esquerda */
+        width: 280px; /* Largura fixa para parecer um menu lateral luxuoso */
+        height: 100vh;
+        background: var(--bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 40px;
+        gap: 20px;
+        transform: none;
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 15px 0 30px rgba(0,0,0,0.1);
+        z-index: 1100;
+    }
+
+    /* 3. Quando o menu abre */
+    .nav-links.active {
+        left: 0; /* Desliza para dentro */
+    }
+
+    /* 4. Estilo do botão Dark Mode dentro do menu */
+    .mobile-toggle-item {
+        margin-top: 20px;
+        list-style: none;
+    }
+
+    #mode-toggle {
+        display: block !important;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+    }
+}
