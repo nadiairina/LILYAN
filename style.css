@@ -1331,47 +1331,31 @@ body, html {
         background-color: var(--text) !important;
     }
 }
-/* --- REGRAS EXCLUSIVAS PARA A PÁGINA SHOWROOM --- */
+/* --- AJUSTE ESPECÍFICO SHOWROOM --- */
 
-/* 1. Remove a linha da navbar apenas nesta página */
-.page-showroom #navbar {
-    border-bottom: none !important;
-    background: transparent !important;
-}
-
-/* 2. Sobe o conteúdo do convite */
+/* 1. Sobe o conteúdo do Cofre */
 .page-showroom .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh; /* Define uma altura para o flex trabalhar */
-    margin-top: -5vh !important; /* Puxa o bloco para cima */
-    padding-bottom: 0 !important;
+    position: absolute;
+    top: 45%;               /* Move o ponto central para cima */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza perfeitamente no novo ponto */
+    width: 90%;
+    max-width: 600px;
+    margin: 0 !important;   /* Remove margens que empurram para baixo */
+    padding: 0 !important;
 }
 
-/* 3. Ajuste fino para os textos do convite */
-.page-showroom .hero-content h1 {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.page-showroom .hero-content p {
-    margin-bottom: 30px !important;
-}
-
-/* 4. Ajuste para Desktop (Sobe ainda mais para elegância) */
-@media (min-width: 992px) {
-    .page-showroom .hero-content {
-        margin-top: -10vh !important;
-    }
-}
-
-/* 5. Garante que o footer não empurra o conteúdo para cima */
+/* 2. Garante que a linha do Footer aparece e fica no sítio */
 .page-showroom footer {
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     width: 100%;
-    background: transparent !important;
-    border: none !important;
+    padding: 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important; /* A linha que faltava */
+    background: transparent;
+}
+
+/* 3. Ajuste para a Navbar na Home/Showroom (Sem linha no topo se preferires) */
+.page-showroom #navbar {
+    border-bottom: none !important;
 }
