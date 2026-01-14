@@ -231,10 +231,20 @@ body {
     }
 
     .menu-icon {
-        display: flex; /* Mostra o hambúrguer */
-        order: 3;      /* Hamburguer à direita */
-        z-index: 1001;
-    }
+    display: none; /* Escondido no PC */
+    cursor: pointer;
+    z-index: 2000;
+    padding: 10px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text); /* Garante que a cor segue o tema */
+    margin: 5px 0;
+    transition: 0.4s;
+    display: block;
+}
 
     .logo {
         order: 1;
@@ -607,17 +617,17 @@ footer a:hover {
 .menu-icon {
     display: none; /* Escondido no PC */
     cursor: pointer;
-    z-index: 2000 !important; 
+    z-index: 2000;
     padding: 10px;
-    margin-right: 20px; /* Isto afasta o menu do canto direito */
 }
 
 .menu-icon .bar {
     width: 25px;
     height: 2px;
-    background-color: var(--text) !important; /* Força a cor preta ou branca conforme o modo */
+    background-color: var(--text); /* Garante que a cor segue o tema */
     margin: 5px 0;
-    display: block; /* Garante que as barras existem */
+    transition: 0.4s;
+    display: block;
 }
 
 /* RESPONSIVIDADE PARA TELEMÓVEL */
@@ -677,17 +687,17 @@ footer a:hover {
 .menu-icon {
     display: none; /* Escondido no PC */
     cursor: pointer;
-    z-index: 2000 !important; 
+    z-index: 2000;
     padding: 10px;
-    margin-right: 20px; /* Isto afasta o menu do canto direito */
 }
 
 .menu-icon .bar {
     width: 25px;
     height: 2px;
-    background-color: var(--text) !important; /* Força a cor preta ou branca conforme o modo */
+    background-color: var(--text); /* Garante que a cor segue o tema */
     margin: 5px 0;
-    display: block; /* Garante que as barras existem */
+    transition: 0.4s;
+    display: block;
 }
 /* --- RESPONSIVIDADE (Ajuste para Telemóvel) --- */
 @media (max-width: 1024px) {
@@ -739,17 +749,17 @@ footer a:hover {
 .menu-icon {
     display: none; /* Escondido no PC */
     cursor: pointer;
-    z-index: 2000 !important; 
+    z-index: 2000;
     padding: 10px;
-    margin-right: 20px; /* Isto afasta o menu do canto direito */
 }
 
 .menu-icon .bar {
     width: 25px;
     height: 2px;
-    background-color: var(--text) !important; /* Força a cor preta ou branca conforme o modo */
+    background-color: var(--text); /* Garante que a cor segue o tema */
     margin: 5px 0;
-    display: block; /* Garante que as barras existem */
+    transition: 0.4s;
+    display: block;
 }
     .nav-actions {
         display: flex !important;
@@ -809,7 +819,19 @@ footer a:hover {
 }
 
 .menu-icon {
-    order: 2; /* Garante que o hambúrguer fica à direita do botão */
+    display: none; /* Escondido no PC */
+    cursor: pointer;
+    z-index: 2000;
+    padding: 10px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text); /* Garante que a cor segue o tema */
+    margin: 5px 0;
+    transition: 0.4s;
+    display: block;
 }
 @media (max-width: 1024px) {
     .nav-actions {
@@ -869,19 +891,18 @@ footer a:hover {
 .menu-icon {
     display: none; /* Escondido no PC */
     cursor: pointer;
-    z-index: 2000 !important; 
+    z-index: 2000;
     padding: 10px;
-    margin-right: 20px; /* Isto afasta o menu do canto direito */
 }
 
 .menu-icon .bar {
     width: 25px;
     height: 2px;
-    background-color: var(--text) !important; /* Força a cor preta ou branca conforme o modo */
+    background-color: var(--text); /* Garante que a cor segue o tema */
     margin: 5px 0;
-    display: block; /* Garante que as barras existem */
+    transition: 0.4s;
+    display: block;
 }
-
     /* 2. Menu lateral vindo da esquerda */
     .nav-links {
         display: flex !important; /* Garante que o flex funciona */
@@ -921,11 +942,19 @@ footer a:hover {
 }
 /* --- FORÇAR APARIÇÃO DO HAMBÚRGUER --- */
 .menu-icon {
-    display: none; /* Escondido por padrão no PC */
+    display: none; /* Escondido no PC */
     cursor: pointer;
-    z-index: 2000 !important; /* Valor muito alto para ficar acima de tudo */
+    z-index: 2000;
     padding: 10px;
-    background: transparent;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text); /* Garante que a cor segue o tema */
+    margin: 5px 0;
+    transition: 0.4s;
+    display: block;
 }
 
 /* --- MODO RESPONSIVO --- */
@@ -940,17 +969,17 @@ footer a:hover {
 .menu-icon {
     display: none; /* Escondido no PC */
     cursor: pointer;
-    z-index: 2000 !important; 
+    z-index: 2000;
     padding: 10px;
-    margin-right: 20px; /* Isto afasta o menu do canto direito */
 }
 
 .menu-icon .bar {
     width: 25px;
     height: 2px;
-    background-color: var(--text) !important; /* Força a cor preta ou branca conforme o modo */
+    background-color: var(--text); /* Garante que a cor segue o tema */
     margin: 5px 0;
-    display: block; /* Garante que as barras existem */
+    transition: 0.4s;
+    display: block;
 }
 
     /* O menu que desliza da ESQUERDA */
@@ -985,17 +1014,17 @@ footer a:hover {
 .menu-icon {
     display: none; /* Escondido no PC */
     cursor: pointer;
-    z-index: 2000 !important; 
+    z-index: 2000;
     padding: 10px;
-    margin-right: 20px; /* Isto afasta o menu do canto direito */
 }
 
 .menu-icon .bar {
     width: 25px;
     height: 2px;
-    background-color: var(--text) !important; /* Força a cor preta ou branca conforme o modo */
+    background-color: var(--text); /* Garante que a cor segue o tema */
     margin: 5px 0;
-    display: block; /* Garante que as barras existem */
+    transition: 0.4s;
+    display: block;
 }
 
 @media (max-width: 992px) {
@@ -1009,12 +1038,20 @@ footer a:hover {
 
     /* O ícone do menu agora respeita o padding da navbar */
     .menu-icon {
-        display: block !important;
-        position: relative; 
-        right: 0; /* Garante que não está fugir para fora */
-        z-index: 1200;
-    }
+    display: none; /* Escondido no PC */
+    cursor: pointer;
+    z-index: 2000;
+    padding: 10px;
+}
 
+.menu-icon .bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text); /* Garante que a cor segue o tema */
+    margin: 5px 0;
+    transition: 0.4s;
+    display: block;
+}
     /* Menu que desliza da esquerda */
     .nav-links {
         position: fixed;
