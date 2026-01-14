@@ -1303,3 +1303,31 @@ body, html {
     margin-top: -85px; /* Puxa a imagem para trás da navbar se ela for fixa */
     background-size: cover;
 }
+/* 1. REMOVER LINHA APENAS NA HOME */
+#navbar.home-page {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* 2. CORES NO MODO RESPONSIVO (Mobile) */
+@media (max-width: 992px) {
+    /* Força o fundo do menu lateral a seguir o tema */
+    .nav-links {
+        background-color: var(--bg) !important;
+    }
+
+    /* Força as letras a serem PRETAS no Light Mode e BRANCAS no Dark Mode */
+    /* Mesmo que seja na página inicial, no telemóvel o menu precisa de contraste */
+    #navbar.home-page .nav-links li a,
+    .nav-links li a {
+        color: var(--text) !important;
+        text-shadow: none !important; /* Remove sombra no mobile para ficar limpo */
+        background: transparent !important;
+    }
+
+    /* Ajusta o ícone do hambúrguer para ser visível conforme o fundo da página */
+    /* Na home (sobre a foto) ele continua branco, nas outras segue o tema */
+    #navbar:not(.home-page) .menu-icon .bar {
+        background-color: var(--text) !important;
+    }
+}
