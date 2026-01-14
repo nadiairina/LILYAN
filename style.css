@@ -876,106 +876,84 @@ footer a:hover {
         /* Resto das suas configurações de menu lateral mantêm-se */
     }
 }
-/* --- 1. CONFIGURAÇÃO BASE DA NAVBAR --- */
+/* --- NAVBAR DESKTOP --- */
 #navbar {
     height: 80px; /* Barra mais fina */
     display: flex;
-    justify-content: space-between; /* Logo à esquerda, ações à direita */
+    justify-content: space-between;
     align-items: center;
     padding: 0 5%;
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     z-index: 1000;
     background: var(--bg);
     border-bottom: 1px solid rgba(176, 141, 87, 0.1);
 }
 
-/* --- 2. LOGO --- */
-.logo {
-    z-index: 1100;
-}
 .logo img {
-    height: 60px !important; /* Ajustado para a barra de 80px */
-    width: auto;
+    height: 55px !important;
 }
 
-/* --- 3. LINKS CENTRALIZADOS (PC) --- */
+/* Centralização absoluta dos links no PC */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 25px;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); /* Força o centro exato da página */
-}
-
-/* --- 4. AÇÕES (TOGGLE E HAMBURGUER NO MOBILE) --- */
-.nav-actions {
-    display: flex;
+    transform: translateX(-50%);
     align-items: center;
-    gap: 20px;
-    z-index: 1100;
 }
 
-/* Garante que o toggle aparece sempre */
 #mode-toggle {
     background: transparent;
     border: 1px solid var(--accent);
     color: var(--text);
     cursor: pointer;
-    padding: 5px 10px;
-    font-size: 1.2rem;
+    padding: 5px 12px;
     border-radius: 4px;
-    display: block !important; 
-    order: 1; /* Toggle primeiro */
+    font-size: 1.1rem;
+    transition: 0.3s;
 }
 
-/* Menu Hambúrguer */
-.menu-icon {
-    display: none; /* Escondido no PC */
-    cursor: pointer;
-    order: 2; /* Hambúrguer depois do toggle */
-}
-
-.menu-icon .bar {
-    width: 25px;
-    height: 2px;
-    background-color: var(--text);
-    margin: 5px 0;
-    transition: 0.4s;
-}
-
-/* --- 5. AJUSTES RESPONSIVOS (MOBILE) --- */
+/* --- MODO RESPONSIVO (MOBILE) --- */
 @media (max-width: 992px) {
     .nav-links {
-        display: none; /* Esconde os links centrais no mobile */
-        flex-direction: column;
         position: fixed;
         top: 0;
-        right: -100%;
-        width: 100%;
+        left: -100%; /* Começa escondido à esquerda */
+        width: 80%;  /* Não ocupa a tela toda para estilo */
         height: 100vh;
         background: var(--bg);
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        left: auto;
+        align-items: flex-start; /* Alinha itens à esquerda do menu */
+        padding-left: 50px;
         transform: none;
-        transition: 0.5s;
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 10px 0 20px rgba(0,0,0,0.1);
     }
 
     .nav-links.active {
-        display: flex;
-        right: 0;
+        left: 0; /* Desliza da esquerda para a direita */
+    }
+
+    .nav-links li {
+        margin: 15px 0;
     }
 
     .menu-icon {
-        display: block; /* Aparece no mobile */
+        display: block;
+        z-index: 1100;
+        cursor: pointer;
     }
 
-    /* Movemos o menu-icon para dentro da zona de visão se necessário */
-    .nav-actions {
-        position: relative;
+    /* Espaçamento extra para o botão no mobile */
+    .mobile-toggle-container {
+        margin-top: 30px !important;
     }
 }
+
+/* Esconde o toggle do menu principal se estiver no PC (opcional, se quiseres outro na lateral) */
+/* No seu caso, mantemos o mesmo botão que apenas muda de posição via CSS */
