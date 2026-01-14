@@ -1331,3 +1331,47 @@ body, html {
         background-color: var(--text) !important;
     }
 }
+/* --- REGRAS EXCLUSIVAS PARA A PÁGINA SHOWROOM --- */
+
+/* 1. Remove a linha da navbar apenas nesta página */
+.page-showroom #navbar {
+    border-bottom: none !important;
+    background: transparent !important;
+}
+
+/* 2. Sobe o conteúdo do convite */
+.page-showroom .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Define uma altura para o flex trabalhar */
+    margin-top: -5vh !important; /* Puxa o bloco para cima */
+    padding-bottom: 0 !important;
+}
+
+/* 3. Ajuste fino para os textos do convite */
+.page-showroom .hero-content h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.page-showroom .hero-content p {
+    margin-bottom: 30px !important;
+}
+
+/* 4. Ajuste para Desktop (Sobe ainda mais para elegância) */
+@media (min-width: 992px) {
+    .page-showroom .hero-content {
+        margin-top: -10vh !important;
+    }
+}
+
+/* 5. Garante que o footer não empurra o conteúdo para cima */
+.page-showroom footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+}
