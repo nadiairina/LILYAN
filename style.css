@@ -901,57 +901,65 @@ footer a:hover {
     display: none; /* Escondido no PC */
     cursor: pointer;
     z-index: 2000 !important;
-    padding: 10px;
-    /* Afasta o ícone do canto direito do telemóvel */
-    margin-right: 25px !important; 
+    padding: 15px; /* Aumenta a área de clique */
+    background: transparent;
+    border: none;
+    /* Afasta o ícone da borda direita */
+    margin-right: 20px !important; 
 }
 
 .menu-icon .bar {
-    width: 25px;
+    width: 28px;
     height: 2px;
     background-color: var(--text) !important;
-    margin: 5px 0;
+    margin: 6px 0;
     transition: 0.4s;
     display: block;
 }
 @media (max-width: 992px) {
     #navbar {
-        height: 70px !important; /* Barra mais elegante */
-        padding: 0 5% !important;
+        height: 70px !important;
+        /* O padding-right aqui é o que impede o ícone de ficar "de fora" */
+        padding: 0 30px 0 20px !important; 
         display: flex !important;
+        flex-direction: row !important;
         justify-content: space-between !important;
         align-items: center !important;
+        box-sizing: border-box !important;
     }
 
     .logo img {
-        height: 45px !important; /* Logo ajustado */
+        height: 45px !important;
     }
 
     .menu-icon {
-        display: block !important; /* Garante que aparece */
+        display: block !important;
+        /* Garante que ele não herda posições absolutas anteriores */
+        position: relative !important; 
+        right: auto !important;
     }
 
-    /* Menu que desliza da ESQUERDA */
+    /* Menu lateral vindo da ESQUERDA */
     .nav-links {
         position: fixed;
         top: 0;
-        left: -100%; /* Começa fora do ecrã à esquerda */
-        width: 280px; /* Largura lateral */
+        left: -100%; 
+        width: 280px;
         height: 100vh;
         background: var(--bg);
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         padding-left: 40px;
-        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: 0.5s ease;
         z-index: 1500;
         box-shadow: 10px 0 20px rgba(0,0,0,0.1);
         display: flex !important;
-        transform: none !important; /* Remove a centralização do PC */
+        transform: none !important;
     }
 
     .nav-links.active {
-        left: 0 !important; /* Entra para a direita */
+        left: 0 !important;
     }
 
     .nav-links li {
@@ -960,9 +968,8 @@ footer a:hover {
         transform: none !important;
     }
 
-    /* Espaço para o botão no fundo do menu mobile */
     .mobile-toggle-item {
         margin-top: 30px;
-        list-style: none;
+        display: block !important;
     }
 }
