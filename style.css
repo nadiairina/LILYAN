@@ -1215,3 +1215,22 @@ h1 {
     color: var(--text) !important;
     transition: 0.3s;
 }
+/* Coloca isto logo no início do teu CSS */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    overflow-x: hidden; /* Impede que o site balance para os lados */
+}
+.hero-slider {
+    width: 100vw;          /* Largura total do ecrã */
+    height: 100vh;         /* Altura total do ecrã */
+    margin: 0 !important;  /* Garante que não há espaço em volta */
+    padding: 0 !important;
+    background-size: cover;    /* Estica a imagem sem distorcer */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
