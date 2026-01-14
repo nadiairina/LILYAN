@@ -1,17 +1,13 @@
-/**
- * LILYAN - Script de Interatividade e Animações de Luxo
- * Versão Final: Dark Mode + Scroll Reveal + Menu Mobile Corrigido
- */
-
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. GESTÃO DO MODO ESCURO (DARK MODE) ---
+    // --- 1. DARK MODE ---
     const modeBtn = document.getElementById('mode-toggle');
     const body = document.body;
 
     const updateIcon = (isDark) => {
         if (modeBtn) {
             modeBtn.textContent = isDark ? '☀' : '✧';
+            modeBtn.style.borderColor = isDark ? '#fdfcf8' : '#b08d57';
         }
     };
 
@@ -30,21 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
-    // --- 2. LÓGICA DO MENU MOBILE (HAMBÚRGUER) ---
+    // --- 2. MENU MOBILE (HAMBÚRGUER) ---
     const menuIcon = document.getElementById('menu-icon');
     const navLinksContainer = document.getElementById('nav-links');
 
     if (menuIcon && navLinksContainer) {
-        menuIcon.addEventListener('click', () => {
+        menuIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
             menuIcon.classList.toggle('active');
             navLinksContainer.classList.toggle('active');
-            
-            // Impede o scroll do site quando o menu está aberto
             document.body.style.overflow = navLinksContainer.classList.contains('active') ? 'hidden' : 'auto';
         });
 
-        // Fechar menu ao clicar num link (importante para navegação interna)
+        // Fechar ao clicar num link
         const links = navLinksContainer.querySelectorAll('a');
         links.forEach(link => {
             link.addEventListener('click', () => {
@@ -55,70 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
-    // --- 3. ANIMAÇÕES DE REVELAÇÃO (SCROLL REVEAL) ---
-    const observerOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
-    const revealOnScroll = new IntersectionObserver((entries, observer) => {
+    // --- 3. REVEAL ON SCROLL ---
+    const revealOnScroll = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target); 
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.15 });
 
-    const elementsToAnimate = document.querySelectorAll(
-        '.reveal, .atelier-visual, .info-block, .luxury-form, .hero-content, .map-wrapper, .card'
-    );
-    
-    elementsToAnimate.forEach(el => {
-        el.classList.add('reveal-init'); 
+    document.querySelectorAll('.reveal, .card, .info-block').forEach(el => {
+        el.classList.add('reveal-init');
         revealOnScroll.observe(el);
     });
-
-
-    // --- 4. EFEITO DE PARALLAX NO HERO ---
-    const hero = document.querySelector('.hero-slider');
-    if (hero) {
-        window.addEventListener('scroll', () => {
-            const scroll = window.pageYOffset;
-            hero.style.backgroundPositionY = (scroll * 0.4) + 'px';
-        });
-    }
-
-
-    // --- 5. ANIMAÇÃO DE ENTRADA DO MENU (DESKTOP) ---
-    const navLinksItems = document.querySelectorAll('.nav-links li');
-    navLinksItems.forEach((link, index) => {
-        link.style.opacity = '0';
-        link.style.transform = 'translateY(-10px)';
-        link.style.transition = `all 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards ${index * 0.1}s`;
-        
-        setTimeout(() => {
-            link.style.opacity = '1';
-            link.style.transform = 'translateY(0)';
-        }, 100);
-    });
 });
-// Dentro do script.js, na parte do updateIcon:
-const updateIcon = (isDark) => {
-    if (modeBtn) {
-        modeBtn.textContent = isDark ? '☀' : '✧';
-        // Opcional: muda a cor da borda do botão quando ativo
-        modeBtn.style.borderColor = isDark ? '#fdfcf8' : '#b08d57';
-    }
-};
-const menuIcon = document.getElementById('menu-icon');
-const navLinks = document.getElementById('nav-links');
-
-if (menuIcon && navLinks) {
-    menuIcon.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        // Opcional: animação das barras do hambúrguer
-        menuIcon.classList.toggle('toggle-anim'); 
-    });
-}
