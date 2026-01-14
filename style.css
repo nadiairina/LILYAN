@@ -960,3 +960,63 @@ footer a:hover {
         pointer-events: none;
     }
 }
+/* --- ESTILO DO HAMBURGUER --- */
+.menu-icon {
+    display: none; /* Escondido no PC */
+    cursor: pointer;
+    z-index: 2000;
+    padding: 10px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text);
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 992px) {
+    #navbar {
+        height: 70px; /* Barra fina no mobile */
+        padding: 0 20px;
+    }
+
+    .menu-icon {
+        display: block !important; /* Força o aparecimento */
+    }
+
+    .nav-links {
+        display: flex !important;
+        position: fixed;
+        top: 0;
+        left: -100%; /* Escondido à esquerda */
+        width: 280px;
+        height: 100vh;
+        background: var(--bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 40px;
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1500;
+        box-shadow: 10px 0 30px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active {
+        left: 0; /* Desliza da esquerda para o centro */
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        opacity: 1 !important; /* Garante visibilidade */
+        transform: none !important;
+    }
+
+    /* Estilo do botão dentro do menu mobile */
+    .mobile-toggle-item {
+        margin-top: 30px;
+        list-style: none;
+    }
+}
