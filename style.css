@@ -1118,3 +1118,17 @@ h1, .hero-content h1 {
     background: transparent !important;
     border-bottom: none !important;
 }
+.logo img {
+    height: 85px !important;
+    width: auto;
+    filter: none !important; 
+}
+
+@media (max-width: 992px) {
+    .logo img { height: 60px !important; }
+    
+    /* No mobile, o menu lateral deve ter sempre fundo para ler bem */
+    .nav-links {
+        background-color: var(--bg) !important;
+    }
+}
