@@ -1,13 +1,12 @@
 :root {
-    --bg: #fdfcf8;      /* Fundo do site claro */
-    --menu-txt: #ffffff; /* Letras do MENU BRANCAS no Light Mode */
-    --menu-bg: #1a1a1a;  /* Fundo do menu mobile escuro para contrastar */
+    --bg: #fdfcf8;      /* Fundo Claro */
+    --text: #1a1a1a;    /* Letras Pretas no Light Mode */
+    --accent: #b08d57;
 }
 
 .dark-mode {
-    --bg: #0a0a0a;      /* Fundo do site escuro */
-    --menu-txt: #000000; /* Letras do MENU PRETAS no Dark Mode */
-    --menu-bg: #ffffff;  /* Fundo do menu mobile claro para contrastar */
+    --bg: #0a0a0a;      /* Fundo Escuro */
+    --text: #fdfcf8;    /* Letras Brancas no Dark Mode */
 }
 
 body {
