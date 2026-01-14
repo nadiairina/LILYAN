@@ -1234,3 +1234,37 @@ html, body {
     align-items: center;
     justify-content: center;
 }
+/* --- REGRA PARA AS PÁGINAS NORMAIS (Ética, Contactos, etc.) --- */
+/* Segue o botão: Preto no Light / Branco no Dark */
+.nav-links li a {
+    color: var(--text) !important;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* --- REGRA EXCLUSIVA PARA A PÁGINA INICIAL --- */
+/* Se a Nav tiver a classe 'home-page', as letras são SEMPRE brancas */
+#navbar.home-page .nav-links li a,
+#navbar.home-page .menu-icon .bar {
+    color: #ffffff !important;
+    background-color: #ffffff !important; /* para as barras do hamburguer */
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.5) !important;
+}
+
+/* Garante que o fundo da nav na home é transparente para ver a imagem */
+#navbar.home-page {
+    background: transparent !important;
+    border-bottom: none !important;
+}
+/* Imagem total na Home */
+.hero-slider {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 !important;
+}
+
+/* Footer inteligente: muda com o botão */
+footer, footer p, footer a, #mode-toggle {
+    color: var(--text) !important;
+    border-color: var(--text);
+}
