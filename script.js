@@ -112,3 +112,13 @@ const updateIcon = (isDark) => {
         modeBtn.style.borderColor = isDark ? '#fdfcf8' : '#b08d57';
     }
 };
+const menuIcon = document.getElementById('menu-icon');
+const navLinks = document.getElementById('nav-links');
+
+if (menuIcon && navLinks) {
+    menuIcon.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Opcional: animação das barras do hambúrguer
+        menuIcon.classList.toggle('toggle-anim'); 
+    });
+}
