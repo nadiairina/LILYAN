@@ -1331,3 +1331,31 @@ body, html {
         background-color: var(--text) !important;
     }
 }
+/* Este é o contentor que envolve o texto do convite */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* AJUSTES PARA SUBIR */
+    margin-top: -10vh; /* Sobe o conteúdo em 10% da altura do ecrã */
+    padding-bottom: 50px; /* Garante que não cola na borda inferior */
+    z-index: 2;
+}
+
+/* Se quiser subir ainda mais em ecrãs maiores */
+@media (min-width: 992px) {
+    .hero-content {
+        margin-top: -15vh; 
+    }
+}
+.hero-content h1 {
+    margin-bottom: 10px !important; /* Aproxima o título do texto de baixo */
+}
+
+.hero-content p {
+    margin-bottom: 30px !important; /* Dá espaço para o botão/input respirar */
+    max-width: 600px; /* Mantém o texto centralizado e elegante */
+}
