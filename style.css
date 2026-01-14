@@ -1047,3 +1047,45 @@ body, html {
     font-weight: 700 !important; /* Bem negrito */
     text-shadow: 2px 2px 15px rgba(255, 255, 255, 0.1), 0 0 20px rgba(0,0,0,0.8) !important;
 }
+/* Links da Navbar sempre brancos */
+.nav-links li a {
+    color: #ffffff !important;
+    font-weight: 500;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); /* Sombra para ler bem sobre fotos claras */
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+/* Cor das barras do hambúrguer sempre brancas */
+.menu-icon .bar {
+    background-color: #ffffff !important;
+}
+
+/* Quando o menu mobile abre, as letras continuam brancas */
+@media (max-width: 992px) {
+    .nav-links {
+        background-color: #000000; /* Fundo preto no menu mobile para as letras brancas brilharem */
+    }
+    
+    .nav-links li a {
+        color: #ffffff !important;
+    }
+}
+.logo img {
+    height: 85px !important; /* Tamanho maior que pediste */
+    width: auto;
+    filter: none !important; /* Garante que não há filtros */
+    mix-blend-mode: normal !important;
+}
+
+@media (max-width: 992px) {
+    .logo img {
+        height: 65px !important; /* Ajuste para telemóvel */
+    }
+}
+h1, .hero-content h1 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6) !important;
+}
