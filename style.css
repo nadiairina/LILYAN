@@ -896,26 +896,24 @@ footer a:hover {
     }
 }
 /* --- ESTILO DO HAMBURGUER --- */
-/* Localize e substitua por isto */
-/* --- ESTILO ÚNICO DO ÍCONE --- */
+
 .menu-icon {
     display: none; /* Escondido no PC */
     cursor: pointer;
     z-index: 2000 !important;
     padding: 10px;
-    background: transparent;
-    border: none;
+    /* Afasta o ícone do canto direito do telemóvel */
+    margin-right: 25px !important; 
 }
 
 .menu-icon .bar {
     width: 25px;
     height: 2px;
-    background-color: var(--text) !important; /* Força a cor conforme o modo */
+    background-color: var(--text) !important;
     margin: 5px 0;
     transition: 0.4s;
     display: block;
 }
-
 @media (max-width: 992px) {
     #navbar {
         height: 80px !important; /* Barra fina */
