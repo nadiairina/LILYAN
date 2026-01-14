@@ -1028,3 +1028,25 @@ body, html {
         height: 60px !important;
     }
 }
+/* Foca na legibilidade do texto no modo escuro */
+.dark-mode .nav-links li a {
+    color: #fdfcf8 !important; /* Branco pérola para máximo contraste */
+    font-weight: 500 !important; /* Engrossa um pouco a letra */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Brilho subtil nas letras */
+    letter-spacing: 2px;
+}
+
+/* Garante que o link ativo ou ao passar o rato também se veja */
+.dark-mode .nav-links li a:hover {
+    color: var(--accent) !important; /* Dourado ao passar o rato */
+}
+.dark-mode .logo img {
+    /* Inverte a cor (se for preto vira branco) e aumenta a exposição */
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255,255,255,0.4)) !important;
+}
+.dark-mode h1, 
+.dark-mode .hero-content h1 {
+    color: #fdfcf8 !important;
+    font-weight: 700 !important; /* Bem negrito */
+    text-shadow: 2px 2px 15px rgba(255, 255, 255, 0.1), 0 0 20px rgba(0,0,0,0.8) !important;
+}
