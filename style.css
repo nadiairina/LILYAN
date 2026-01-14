@@ -1268,3 +1268,38 @@ footer, footer p, footer a, #mode-toggle {
     color: var(--text) !important;
     border-color: var(--text);
 }
+/* Limpeza Geral dos Links da Navbar */
+.nav-links li a {
+    background-color: transparent !important; /* Remove qualquer fundo por trás das letras */
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* --- ESTILO PARA AS PÁGINAS COM FUNDO LISO (Coleção, Ética, etc.) --- */
+/* Letras Pretas no Light Mode / Brancas no Dark Mode */
+#navbar .nav-links li a {
+    color: var(--text) !important;
+}
+
+/* --- ESTILO EXCLUSIVO PARA A PÁGINA INICIAL (Sobre a Imagem) --- */
+/* Forçamos letras brancas sem fundo, apenas com sombra para leitura */
+#navbar.home-page .nav-links li a {
+    color: #ffffff !important;
+    background: transparent !important; /* Garante que não há caixas brancas */
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); /* Sombra suave para destacar da foto */
+}
+/* Remove qualquer margem que esteja a empurrar a imagem */
+body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.hero-slider {
+    width: 100vw;
+    height: 100vh;
+    margin-top: -85px; /* Puxa a imagem para trás da navbar se ela for fixa */
+    background-size: cover;
+}
