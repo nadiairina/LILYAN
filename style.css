@@ -809,3 +809,70 @@ footer a:hover {
         font-size: 18px; /* Aumenta um pouco para facilitar o toque */
     }
 }
+/* --- AJUSTES GERAIS DA NAVBAR --- */
+#navbar {
+    height: 80px; /* 1. Reduzido de 120px para 80px para ser mais fina */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    position: fixed;
+    top: 0; 
+    width: 100%; 
+    z-index: 1000;
+    background: var(--bg);
+    border-bottom: 1px solid rgba(176, 141, 87, 0.1);
+}
+
+.logo img {
+    height: 60px !important; /* Ajustado para caber na barra mais fina */
+    width: auto;
+}
+
+/* 2. CENTRALIZAR OS LINKS NO PC */
+.nav-links {
+    display: flex;
+    list-style: none;
+    position: absolute; /* Posicionamento absoluto em relação à navbar */
+    left: 50%;
+    transform: translateX(-50%); /* Técnica para centralizar perfeitamente */
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto; /* Empurra o toggle para a direita */
+    z-index: 1100;
+}
+
+/* --- AJUSTES RESPONSIVOS (MOBILE) --- */
+@media (max-width: 768px) {
+    #navbar {
+        height: 70px;
+        padding: 0 20px; /* Menos margem lateral no mobile */
+    }
+
+    .logo img {
+        height: 50px !important;
+    }
+
+    /* 3. MENU HAMBURGUER E TOGGLE NO MOBILE */
+    .menu-icon {
+        order: 3; /* Fica em último */
+        margin-left: 15px;
+        position: relative;
+        right: 0; /* Removido o posicionamento fixo/extremo */
+    }
+
+    #mode-toggle {
+        order: 2; /* Fica antes do menu hambúrguer */
+        display: block !important; /* Garante que aparece no PC e Mobile */
+    }
+
+    .nav-links {
+        left: auto;
+        transform: none;
+        /* Resto das suas configurações de menu lateral mantêm-se */
+    }
+}
