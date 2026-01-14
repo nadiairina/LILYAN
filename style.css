@@ -1190,3 +1190,28 @@ footer a, footer p, footer h4 {
     color: #ffffff !important; /* Sempre branco no slider para leitura */
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
+/* Links da Navbar: Sempre Brancos em qualquer modo */
+.nav-links li a {
+    color: #ffffff !important; 
+    font-weight: 500;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); /* Essencial para ler no fundo pérola */
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Garante que o efeito de passar o rato (hover) funciona */
+.nav-links li a:hover {
+    color: var(--accent) !important;
+}
+/* Texto geral, Footer e Toggle seguem a lógica do botão */
+body, p, h4, footer, footer a, #mode-toggle {
+    color: var(--text) !important;
+    border-color: var(--text);
+}
+
+/* Os títulos (H1) também mudam conforme o modo */
+h1 {
+    color: var(--text) !important;
+    transition: 0.3s;
+}
